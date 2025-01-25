@@ -2,11 +2,9 @@ using UIKit;
 
 namespace BadMC_Launcher.MacCatalyst;
 
-public class EntryPoint
-{
+public class EntryPoint {
     // This is the main entry point of the application.
-    public static void Main(string[] args)
-    {
+    public static void Main(string[] args) {
         App.InitializeLogging();
 
         // if you want to use a different Application Delegate class from "AppDelegate"

@@ -1,0 +1,49 @@
+{
+  "Version": 1,
+  "WorkspaceRootPath": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\Uno Platform\\BadMC Launcher\\BadMC_Launcher\\",
+  "Documents": [
+    {
+      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\uno platform\\badmc launcher\\badmc_launcher\\badmc_launcher\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    }
+  ],
+  "DocumentGroupContainers": [
+    {
+      "Orientation": 0,
+      "VerticalTabListWidth": 256,
+      "DocumentGroups": [
+        {
+          "DockedWidth": 200,
+          "SelectedChildIndex": 2,
+          "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{1c4feeaa-4718-4aa9-859d-94ce25d182ba}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\Uno Platform\\BadMC Launcher\\BadMC_Launcher\\BadMC_Launcher\\Views\\MainPage.xaml",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\Uno Platform\\BadMC Launcher\\BadMC_Launcher\\BadMC_Launcher\\Views\\MainPage.xaml",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAABEAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-25T12:31:29.667Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
+            }
+          ]
+        }
+      ]
+    }
+  ]
+}

@@ -1,25 +1,36 @@
-using System;
-using Microsoft.Extensions.Logging;
+using System.Diagnostics;
+using BadMC_Launcher.Models.Base;
+using BadMC_Launcher.Models.Classes.Settings;
+using BadMC_Launcher.Models.Utils.FileUtils;
+using Microsoft.UI;
 using Uno.Resizetizer;
+using Windows.UI;
 
 namespace BadMC_Launcher;
 
-public partial class App : Application
-{
+public partial class App : Application {
     /// <summary>
     /// Initializes the singleton application object. This is the first line of authored code
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
-    public App()
-    {
+    public App() {
         this.InitializeComponent();
     }
-
+    
+    
     protected Window? MainWindow { get; private set; }
 
-    protected override void OnLaunched(LaunchActivatedEventArgs args)
-    {
+    protected override void OnLaunched(LaunchActivatedEventArgs args) {
         MainWindow = new Window();
+        MainWindow.AppWindow.Title = WindowConfigs.WindowName;
+        MainWindow.AppWindow.Resize(WindowConfigs.WindowSize);
+        MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+#if WINDOWS
+        MainWindow.AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
+#endif
+
+        
+        //MainWindow.AppWindow.TitleBar.SetDragRectangles();
 #if DEBUG
         MainWindow.UseStudio();
 #endif
@@ -56,16 +67,14 @@ public partial class App : Application
     /// </summary>
     /// <param name="sender">The Frame which failed navigation</param>
     /// <param name="e">Details about the navigation failure</param>
-    void OnNavigationFailed(object sender, NavigationFailedEventArgs e)
-    {
+    void OnNavigationFailed(object sender, NavigationFailedEventArgs e) {
         throw new InvalidOperationException($"Failed to load {e.SourcePageType.FullName}: {e.Exception}");
     }
 
     /// <summary>
     /// Configures global Uno Platform logging
     /// </summary>
-    public static void InitializeLogging()
-    {
+    public static void InitializeLogging() {
 #if DEBUG
         // Logging is disabled by default for release builds, as it incurs a significant
         // initialization cost from Microsoft.Extensions.Logging setup. If startup performance
@@ -74,8 +83,7 @@ public partial class App : Application
         //
         // For more performance documentation: https://platform.uno/docs/articles/Uno-UI-Performance.html
 
-        var factory = LoggerFactory.Create(builder =>
-        {
+        var factory = LoggerFactory.Create(builder => {
 #if __WASM__
             builder.AddProvider(new global::Uno.Extensions.Logging.WebAssembly.WebAssemblyConsoleLoggerProvider());
 #elif __IOS__ || __MACCATALYST__
@@ -126,5 +134,13 @@ public partial class App : Application
         global::Uno.UI.Adapter.Microsoft.Extensions.Logging.LoggingAdapter.Initialize();
 #endif
 #endif
+    }
+
+    private static void InitApp() {
+        //CheckFolder
+        ConfigFolderUtil.ChangeConfigFolder("Configs\\MinecraftConfigs", AlterationTags.Create);
+        ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", "MinecraftConfigs.json", AlterationTags.Create);
+        ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", "MinecraftList.json", AlterationTags.Create);
+        ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", "JavaList.json", AlterationTags.Create);
     }
 }

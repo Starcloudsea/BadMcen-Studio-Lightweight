@@ -1,7 +1,7 @@
-using System.Diagnostics;
 using System.Security;
+using BadMC_Launcher.Models.Base;
 
-namespace BadMC_Launcher.Models.Base;
+namespace BadMC_Launcher.Models.Utils.FileUtils;
 
 public static class ConfigFolderUtil {
     
@@ -17,37 +17,20 @@ public static class ConfigFolderUtil {
     /// <exception cref="ArgumentException">This exception is thrown when the path name contains invalid characters.</exception>
     /// <exception cref="PathTooLongException">This exception is thrown when the absolute path after the parameter conversion is too long.</exception>
     /// <exception cref="SecurityException">If there are not enough permissions to operate on the folder, this exception is thrown.</exception>
-    public static void ChangeConfigFolder(string path, AlterationTags tags) {
-
-        try {
-            var rootPath = new DirectoryInfo(Path.Combine(GlobalDefinition.ConfigPath, path));
-            switch (tags) {
-                case AlterationTags.Create:
-                    if (!rootPath.Exists) {
-                        rootPath.Create();
-                    }
-                    break;
-                case AlterationTags.Delete:
-                    if (rootPath.Exists) {
-                        rootPath.Delete(true);
-                    } 
-                    break;
-            }
+    public static bool ChangeConfigFolder(string path, AlterationTags tags) {
+        var rootPath = new DirectoryInfo(Path.Combine(GlobalDefinition.ConfigPath, path));
+        switch (tags) {
+            case AlterationTags.Create:
+                    rootPath.Create();
+                    return true;
+            case AlterationTags.Delete:
+                if (rootPath.Exists) {
+                    rootPath.Delete(true);
+                    return true;
+                } 
+                break;
         }
-        catch (Exception ex) {
-            switch (ex) {
-                case ArgumentNullException:
-                case ArgumentException:
-                    //TODO 1
-                    break;
-                case SecurityException:
-                case PathTooLongException:
-                    //TODO 2
-                    break;
-                default:
-                    throw;
-            }
-        }
+        return false;
     }
 
     

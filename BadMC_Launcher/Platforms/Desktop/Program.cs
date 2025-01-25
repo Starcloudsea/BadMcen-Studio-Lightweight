@@ -2,11 +2,9 @@ using Uno.UI.Runtime.Skia;
 
 namespace BadMC_Launcher;
 
-public class Program
-{
+public class Program {
     [STAThread]
-    public static void Main(string[] args)
-    {
+    public static void Main(string[] args) {
         App.InitializeLogging();
 
         var host = SkiaHostBuilder.Create()

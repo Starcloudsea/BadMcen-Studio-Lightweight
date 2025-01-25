@@ -1,71 +1,75 @@
+using System.Diagnostics;
 using System.Security;
 using System.Text.Json;
+using BadMC_Launcher.Models.Base;
 
-namespace BadMC_Launcher.Models.Base;
+namespace BadMC_Launcher.Models.Utils.FileUtils;
 
 public static class ConfigFileUtil {
-    public static void ChangeConfigFile(string path, string fileName, AlterationTags tags) {
-        try {
-            if (new DirectoryInfo(path).Exists) {
+    public static bool ChangeConfigFile(string path, string fileName, AlterationTags tags) {
+        if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
+            try {
                 var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
                 switch (tags) {
                     case AlterationTags.Create:
-                        rootPath.Create();
-                        break;
+                        rootPath.Create().Dispose();
+                        return true;
                     case AlterationTags.Delete:
                         if (rootPath.Exists) {
                             rootPath.Delete();
-                        } 
+                            return true;
+                        }
+
                         break;
+                }
+            }
+            catch (Exception ex) {
+                switch (ex) {
+                    case SecurityException:
+                        break;
+                        
                 }
             }
             
         }
-        catch (Exception ex) {
-            switch (ex) {
-                case ArgumentNullException:
-                case ArgumentException:
-                    //TODO 1
-                    break;
-                case UnauthorizedAccessException:
-                case SecurityException:
-                case PathTooLongException:
-                    //TODO 2
-                    break;
-                default:
-                    throw;
-            }
-        }
+        return false;
     }
-    
+
     public static FileInfo GetFile(string path, string fileName) {
-        if (new DirectoryInfo(path).Exists) {
+        if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
             var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
             if (rootPath.Exists) {
                 return rootPath;
             }
         }
-        throw new FileNotFoundException();
+        throw new FileNotFoundException($"{path}\\{fileName} is not found.");
     }
 
-    public static void ConfigWrite<T>(string path, string fileName, T value) {
-        if (new DirectoryInfo(path).Exists) {
+    public static bool ConfigWrite<T>(string path, string fileName, T value) {
+        if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
             var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
             if (rootPath.Exists) {
                 var jsonValue = JsonSerializer.Serialize(value);
                 File.WriteAllText(rootPath.FullName, jsonValue);
+                return true;
             }
         }
+        return false;
     }
-    public static T? ConfigRead<T>(string path, string fileName) {
-        if (new DirectoryInfo(path).Exists) {
+    public static bool ConfigRead<T>(string path, string fileName, out T? returnValue) {
+        if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
             var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
             if (rootPath.Exists) {
                 var jsonText = File.ReadAllText(rootPath.FullName);
-                var jsonValue = JsonSerializer.Deserialize<T>(jsonText);
-                return jsonValue;
+                if (jsonText.Length > 0) {
+                    var jsonValue = JsonSerializer.Deserialize<T>(jsonText);
+                    returnValue = jsonValue;
+                    return true;
+                }
+                returnValue = default;
+                return false;
             }
         }
-        return default;
+        throw new FileNotFoundException($"{path}\\{fileName} is not found.");
     }
 }
