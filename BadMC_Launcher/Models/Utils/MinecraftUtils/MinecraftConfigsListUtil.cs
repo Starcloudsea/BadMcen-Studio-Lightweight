@@ -75,7 +75,7 @@ public class MinecraftConfigsListUtil {
     public static bool SyncConfigs<T>(string valueName, out T? returnValue) { 
         // Check file
         var status = ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", $"{valueName}.json", AlterationTags.Create);
-        if (!status) {
+        if (status) {
             // Try read
             if (ConfigFileUtil.ConfigRead<T>("Configs\\MinecraftConfigs", $"{valueName}.json", out var value)) {
                 returnValue = value;
@@ -95,7 +95,7 @@ public class MinecraftConfigsListUtil {
     /// Write Sync
     /// </summary>
     public static void SyncConfigs<T>(T value, string className) {
-        if (!ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", $"{className}.json", AlterationTags.Create)) {
+        if (ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", $"{className}.json", AlterationTags.Create)) {
             if (ConfigFileUtil.ConfigWrite("Configs\\MinecraftConfigs", $"{className}.json", value)) {
                 return;
             }

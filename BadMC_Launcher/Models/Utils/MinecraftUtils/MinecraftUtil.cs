@@ -97,7 +97,7 @@ public class MinecraftUtil {
     public bool SyncConfigs(out MinecraftUtil? returnValue) { 
         // Check file
         var status = ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", $"LaunchConfigs.json", AlterationTags.Create);
-        if (!status) {
+        if (status) {
             // Try read
             if (ConfigFileUtil.ConfigRead<MinecraftUtil>("Configs\\MinecraftConfigs", $"LaunchConfigs.json",
                     out var value)) {

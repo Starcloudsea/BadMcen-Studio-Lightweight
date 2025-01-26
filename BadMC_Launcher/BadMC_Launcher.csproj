@@ -39,14 +39,13 @@
             Mvvm;
             ThemeService;
         </UnoFeatures>
+        <ApplicationManifest>app.manifest</ApplicationManifest>
     </PropertyGroup>
     <ItemGroup>
       <Folder Include="Strings\zh-CN\" />
-      <Folder Include="ViewModels\" />
-      <Folder Include="Views\Pages\" />
     </ItemGroup>
     <ItemGroup>
-      <Compile Update="Views\MainPage.xaml.cs">
+      <Compile Update="Views\Pages\MainPage.xaml.cs">
         <DependentUpon>MainPage.xaml</DependentUpon>
         <IsDefaultItem>true</IsDefaultItem>
       </Compile>
@@ -74,6 +73,11 @@
       <MauiXaml Include="Views\MauiXaml1.xaml">
         <IsDefaultItem>true</IsDefaultItem>
       </MauiXaml>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Views\Styles\TransparentButton.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
     </ItemGroup>
 
 </Project>

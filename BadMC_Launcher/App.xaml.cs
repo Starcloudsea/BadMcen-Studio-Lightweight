@@ -1,7 +1,8 @@
-using System.Diagnostics;
+
 using BadMC_Launcher.Models.Base;
 using BadMC_Launcher.Models.Classes.Settings;
 using BadMC_Launcher.Models.Utils.FileUtils;
+using BadMC_Launcher.Views.Pages;
 using Microsoft.UI;
 using Uno.Resizetizer;
 using Windows.UI;
@@ -27,9 +28,11 @@ public partial class App : Application {
         MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
 #if WINDOWS
         MainWindow.AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
+        MainWindow.AppWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
+
 #endif
 
-        
+
         //MainWindow.AppWindow.TitleBar.SetDragRectangles();
 #if DEBUG
         MainWindow.UseStudio();

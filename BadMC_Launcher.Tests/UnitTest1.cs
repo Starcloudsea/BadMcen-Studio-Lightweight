@@ -19,9 +19,6 @@ public class UnitTest1 {
     private static void InitApp() {
         //CheckFolder
         ConfigFolderUtil.ChangeConfigFolder("Configs\\MinecraftConfigs", AlterationTags.Create);
-        Debug.WriteLine("aaa:" + ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", "MinecraftAccounts.json", AlterationTags.Create));
-        ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", "MinecraftList.json", AlterationTags.Create);
-        ConfigFileUtil.ChangeConfigFile("Configs\\MinecraftConfigs", "MinecraftJdkList.json", AlterationTags.Create);
     }
     [Test]
     public void Test1() {

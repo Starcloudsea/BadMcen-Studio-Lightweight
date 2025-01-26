@@ -1,6 +1,7 @@
 using System.Diagnostics;
 using System.Security;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using BadMC_Launcher.Models.Base;
 
 namespace BadMC_Launcher.Models.Utils.FileUtils;
@@ -26,8 +27,16 @@ public static class ConfigFileUtil {
             catch (Exception ex) {
                 switch (ex) {
                     case SecurityException:
+                        //TODO
                         break;
-                        
+                    case UnauthorizedAccessException:
+                        //TODO
+                        break;
+                    case PathTooLongException:
+                        //TODO
+                        break;
+                    default:
+                        throw;
                 }
             }
             
@@ -35,23 +44,66 @@ public static class ConfigFileUtil {
         return false;
     }
 
-    public static FileInfo GetFile(string path, string fileName) {
+    public static FileInfo? GetFile(string path, string fileName) {
         if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
-            var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
-            if (rootPath.Exists) {
-                return rootPath;
-            }
+            try {
+                var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
+                if (rootPath.Exists) {
+                    return rootPath;
+                }
+            } 
+            catch (Exception ex) {
+                switch (ex) {
+                    case SecurityException:
+                        //TODO
+                        break;
+                    case UnauthorizedAccessException:
+                        //TODO
+                        break;
+                    case PathTooLongException:
+                        //TODO
+                        break;
+                    default:
+                        throw;
+                }
+                return null;
+            }   
         }
         throw new FileNotFoundException($"{path}\\{fileName} is not found.");
     }
 
     public static bool ConfigWrite<T>(string path, string fileName, T value) {
-        if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
-            var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
-            if (rootPath.Exists) {
-                var jsonValue = JsonSerializer.Serialize(value);
-                File.WriteAllText(rootPath.FullName, jsonValue);
-                return true;
+        // Json Config
+        var jsonSerializerOptions = new JsonSerializerOptions() {
+            WriteIndented = true,
+            DefaultIgnoreCondition = JsonIgnoreCondition.WhenWritingNull,
+        };
+        try {
+            // Check Folder
+            if (Path.Exists(Path.Combine(GlobalDefinition.ConfigPath, path))) {
+                var rootPath = new FileInfo(Path.Combine(GlobalDefinition.ConfigPath, path, fileName));
+                if (rootPath.Exists) {
+                    // To Json
+                    var jsonValue = JsonSerializer.Serialize(value, jsonSerializerOptions);
+                    // Write To File
+                    File.WriteAllText(rootPath.FullName, jsonValue);
+                    return true;
+                }
+            }
+        }
+        catch (Exception ex) {
+            switch (ex) {
+                case SecurityException:
+                    //TODO
+                    break;
+                case UnauthorizedAccessException:
+                    //TODO
+                    break;
+                case PathTooLongException:
+                    //TODO
+                    break;
+                default:
+                    throw;
             }
         }
         return false;
