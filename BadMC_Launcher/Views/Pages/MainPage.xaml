@@ -4,24 +4,22 @@
       xmlns:local="using:BadMC_Launcher"
       xmlns:utu="using:Uno.Toolkit.UI"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
-    <Grid utu:SafeArea.Insets="VisibleBounds">
+    <Grid x:Name="MainGrid" utu:SafeArea.Insets="VisibleBounds">
         <Grid.RowDefinitions>
             <RowDefinition Height="48"/>
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- TitleBar -->
-        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0">
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
                 <Button Style="{StaticResource TransparentButton}" Height="36" Width="36">
                     <FontIcon Glyph="&#xE7C4;"/>
                 </Button>
                 <Button Style="{StaticResource TransparentButton}" Height="36" Width="36"/>
-                <TextBlock Text="{Binding WindowName}" FontSize="12"  VerticalAlignment="Center"/>
+                <TextBlock Text="{Binding WindowName}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
             </StackPanel>
         </Border>
         <!-- DashBoard -->
-        <Grid Grid.Row="1" Background="Aqua" HorizontalAlignment="Stretch" VerticalAlignment="Stretch">
-            
-        </Grid>
+        <Frame Grid.Row="1" x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
     </Grid>
 </Page>

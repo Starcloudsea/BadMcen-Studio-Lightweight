@@ -3,90 +3,115 @@
   "WorkspaceRootPath": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\",
   "Documents": [
     {
-      "AbsoluteMoniker": "D:0:0:{BC1A01AB-A3B2-4B92-A88F-791B649C2E9B}|BadMC_Launcher.Tests\\BadMC_Launcher.Tests.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{BC1A01AB-A3B2-4B92-A88F-791B649C2E9B}|BadMC_Launcher.Tests\\BadMC_Launcher.Tests.csproj|solutionrelative:badmc_launcher.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\constants\\backgroundtypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\constants\\backgroundtypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\utils\\minecraftutils\\minecraftutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\utils\\minecraftutils\\minecraftutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\constants\\themetypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\constants\\themetypeenum.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\utils\\fileutils\\configfileutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\utils\\fileutils\\configfileutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\settings\\themesetting\\themesettingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\settings\\themesetting\\themesettingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\settings\\themesetting\\ithemesettingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\settings\\themesetting\\ithemesettingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\utils\\minecraftutils\\minecraftconfigslistutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\utils\\minecraftutils\\minecraftconfigslistutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\utils\\fileutils\\configfolderutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\utils\\fileutils\\configfolderutil.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\filemanager\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\filemanager\\ifileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\classes\\settings\\themeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\classes\\settings\\themeconfig.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\classes\\getwallpaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\classes\\getwallpaper.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\pages\\mainpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\filemanager\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\filemanager\\fileservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\viewmodels\\pages\\mainpageviewmodel.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\pages\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\pages\\dashboardpage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\models\\classes\\settings\\windowconfigs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\models\\classes\\settings\\windowconfigs.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\constants\\appreadonlyparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\constants\\appreadonlyparameters.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\app.manifest||{FA3CD31E-987B-443A-9B81-186104E8DAC1}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\app.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\badmc_launcher.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\badmc_launcher.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stars\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\App.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\globalusings.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\pages\\mainpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stars\\.nuget\\packages\\uno.sdk\\5.6.20\\targets\\Uno.Sdk.After.targets||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\styles\\transparentbutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\styles\\transparentbutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+      "AbsoluteMoniker": "D:0:0:{37934AC8-0922-44DC-A250-022CB8486987}|BadMC_Launcher.Tests\\BadMC_Launcher.Tests.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{37934AC8-0922-44DC-A250-022CB8486987}|BadMC_Launcher.Tests\\BadMC_Launcher.Tests.csproj|solutionrelative:badmc_launcher.tests\\unittest1.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\app.manifest||{8B382828-6202-11D1-8870-0000F87579D2}",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\app.manifest||{8B382828-6202-11D1-8870-0000F87579D2}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\pages\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\pages\\dashboardpage.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\badmc_launcher.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|",
-      "RelativeMoniker": "D:0:0:{6C032EF9-990F-40DD-85DF-AAC7F81D4F1D}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\badmc_launcher.csproj||{04B8AB82-A572-4FEF-95CE-5222444B6B64}|"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\constants\\appdatapath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\constants\\appdatapath.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stars\\AppData\\Local\\Temp\\VSGeneratedDocuments\\b7088408-c77c-b2c1-33de-fda429a39f50\\BadMC_Launcher.MainPage.WinRTVtable.g.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\exceptionhandling\\exceptionhandlingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\exceptionhandling\\exceptionhandlingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{BADA71DC-7FFD-4EDC-9F28-FB74AEADC713}|Solution Items{BADA71DC-7FFD-4EDC-9F28-FB74AEADC713}|C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}",
-      "RelativeMoniker": "D:0:0:{BADA71DC-7FFD-4EDC-9F28-FB74AEADC713}|Solution Items{BADA71DC-7FFD-4EDC-9F28-FB74AEADC713}|solutionrelative:.gitignore||{3B902123-F8A7-4915-9F01-361F908088D0}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\exceptionhandling\\iexceptionhandlingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\exceptionhandling\\iexceptionhandlingservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     },
     {
-      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\Views\\Pages\\MainPage.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
-      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\Views\\Pages\\MainPage.g.i.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\framenavigation\\framenavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\framenavigation\\framenavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\services\\framenavigation\\iframenavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\services\\framenavigation\\iframenavigationservice.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\badmc_launcher.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\badmc_launcher.csproj||{FA3CD31E-987B-443A-9B81-186104E8DAC1}|"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\app.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\views\\styles\\transparentbutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\views\\styles\\transparentbutton.xaml||{F11ACC28-31D1-4C80-A34B-F4E09D3D753C}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|c:\\users\\stars\\documents\\development\\tasks\\projects\\applications\\badmc_launcher\\badmc_launcher\\platforms\\desktop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{34CC7E35-3490-48B5-808A-8F20B6A0EA27}|BadMC_Launcher\\BadMC_Launcher.csproj|solutionrelative:badmc_launcher\\platforms\\desktop\\program.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
+    },
+    {
+      "AbsoluteMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\MainPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}",
+      "RelativeMoniker": "D:0:0:{A2FE74E1-B743-11D0-AE1A-00A0C90FFFC3}|\u003CMiscFiles\u003E|solutionrelative:BadMC_Launcher\\Views\\MainPage.xaml.cs||{A6C744A8-0E4A-4FC6-886A-064283054674}"
     }
   ],
   "DocumentGroupContainers": [
@@ -95,298 +120,375 @@
       "VerticalTabListWidth": 256,
       "DocumentGroups": [
         {
-          "DockedWidth": 200,
-          "SelectedChildIndex": 2,
+          "DockedWidth": 185,
+          "SelectedChildIndex": 7,
           "Children": [
+            {
+              "$type": "Bookmark",
+              "Name": "ST:128:0:{75188d03-9892-4ae2-abf1-207126247ce5}"
+            },
+            {
+              "$type": "Bookmark",
+              "Name": "ST:1:0:{e8b06f52-6d01-11d2-aa7d-00c04f990343}"
+            },
             {
               "$type": "Bookmark",
               "Name": "ST:0:0:{aa2115a1-9712-457b-9047-dbb71ca2cdd2}"
             },
             {
-              "$type": "Bookmark",
-              "Name": "ST:0:0:{cce594b6-0c39-4442-ba28-10c64ac7e89f}"
-            },
-            {
               "$type": "Document",
-              "DocumentIndex": 0,
-              "Title": "UnitTest1.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher.Tests\\UnitTest1.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher.Tests\\UnitTest1.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher.Tests\\UnitTest1.cs*",
-              "RelativeToolTip": "BadMC_Launcher.Tests\\UnitTest1.cs*",
-              "ViewState": "AgIAABEAAAAAAAAAAAAIwB0AAAAIAAAAAAAAAA==",
+              "DocumentIndex": 2,
+              "Title": "ThemeSettingService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\Settings\\ThemeSetting\\ThemeSettingService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\Settings\\ThemeSetting\\ThemeSettingService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\Settings\\ThemeSetting\\ThemeSettingService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\Settings\\ThemeSetting\\ThemeSettingService.cs",
+              "ViewState": "AgIAADAAAAAAAAAAAAAuwDQAAAAqAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T14:29:45.795Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 5,
-              "Title": "ConfigFolderUtil.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFolderUtil.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFolderUtil.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFolderUtil.cs",
-              "RelativeToolTip": "BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFolderUtil.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T14:21:26.675Z",
+              "WhenOpened": "2025-02-02T09:59:13.387Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 4,
-              "Title": "MinecraftConfigsListUtil.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftConfigsListUtil.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftConfigsListUtil.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftConfigsListUtil.cs",
-              "RelativeToolTip": "BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftConfigsListUtil.cs",
-              "ViewState": "AgIAAFcAAAAAAAAAAAAAAGEAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T14:21:07.86Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 1,
-              "Title": "MinecraftUtil.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftUtil.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftUtil.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftUtil.cs*",
-              "RelativeToolTip": "BadMC_Launcher\\Models\\Utils\\MinecraftUtils\\MinecraftUtil.cs*",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAJAAAAA4AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T14:21:05.027Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 6,
-              "Title": "ThemeConfig.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Classes\\Settings\\ThemeConfig.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Classes\\Settings\\ThemeConfig.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Classes\\Settings\\ThemeConfig.cs",
-              "RelativeToolTip": "BadMC_Launcher\\Models\\Classes\\Settings\\ThemeConfig.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAAASAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T14:03:52.854Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 2,
-              "Title": "ConfigFileUtil.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFileUtil.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFileUtil.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFileUtil.cs",
-              "RelativeToolTip": "BadMC_Launcher\\Models\\Utils\\FileUtils\\ConfigFileUtil.cs",
-              "ViewState": "AgIAACkAAAAAAAAAAAAuwFEAAAAbAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:27:42.497Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 9,
               "Title": "MainPageViewModel.cs",
               "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\ViewModels\\Pages\\MainPageViewModel.cs",
               "RelativeDocumentMoniker": "BadMC_Launcher\\ViewModels\\Pages\\MainPageViewModel.cs",
               "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\ViewModels\\Pages\\MainPageViewModel.cs",
               "RelativeToolTip": "BadMC_Launcher\\ViewModels\\Pages\\MainPageViewModel.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAuwA4AAAAAAAAAAAAAAA==",
+              "ViewState": "AgIAABQAAAAAAAAAAAA6wCYAAAANAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T10:52:11.857Z",
+              "WhenOpened": "2025-02-01T16:34:38.158Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 11,
-              "Title": "app.manifest",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\app.manifest",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\app.manifest",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\app.manifest",
-              "RelativeToolTip": "BadMC_Launcher\\app.manifest",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2025-01-26T07:54:01.689Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 3,
-              "Title": "App.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\App.xaml.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml.cs",
-              "RelativeToolTip": "BadMC_Launcher\\App.xaml.cs",
-              "ViewState": "AgIAAH8AAAAAAAAAAAAswI8AAAAAAAAAAAAAAA==",
+              "DocumentIndex": 9,
+              "Title": "DashboardPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAYwAQAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:25:29.324Z",
+              "WhenOpened": "2025-02-03T06:27:27.693Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 8,
-              "Title": "MainPage.xaml.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
-              "RelativeToolTip": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAAAAAAAAAAAA==",
+              "Title": "FileService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FileManager\\FileService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\FileManager\\FileService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FileManager\\FileService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\FileManager\\FileService.cs",
+              "ViewState": "AgIAAFUAAAAAAAAAAAAIwF4AAAAcAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:24:25.885Z",
+              "WhenOpened": "2025-01-30T16:21:10.238Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 0,
+              "Title": "BackgroundTypeEnum.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\BackgroundTypeEnum.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Constants\\BackgroundTypeEnum.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\BackgroundTypeEnum.cs*",
+              "RelativeToolTip": "BadMC_Launcher\\Constants\\BackgroundTypeEnum.cs*",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAALAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T10:06:07.954Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 1,
+              "Title": "ThemeTypeEnum.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\ThemeTypeEnum.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Constants\\ThemeTypeEnum.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\ThemeTypeEnum.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Constants\\ThemeTypeEnum.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAsAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T10:04:47.69Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 5,
+              "Title": "IFileService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FileManager\\IFileService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\FileManager\\IFileService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FileManager\\IFileService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\FileManager\\IFileService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAA5AAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-31T02:21:57.14Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 3,
+              "Title": "IThemeSettingService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\Settings\\ThemeSetting\\IThemeSettingService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\Settings\\ThemeSetting\\IThemeSettingService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\Settings\\ThemeSetting\\IThemeSettingService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\Settings\\ThemeSetting\\IThemeSettingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAkAAAAsAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T09:59:25.76Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 6,
+              "Title": "GetWallpaper.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Classes\\GetWallpaper.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Classes\\GetWallpaper.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Classes\\GetWallpaper.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Models\\Classes\\GetWallpaper.cs",
+              "ViewState": "AgIAAAYAAAAAAAAAAAAhwAkAAAAkAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-03T10:06:53.604Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 7,
-              "Title": "MainPage.xaml",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
-              "RelativeToolTip": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
-              "ViewState": "AgIAAAkAAAAAAAAAAAAAABcAAAAMAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-25T12:31:29.667Z",
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml.cs",
+              "ViewState": "AgIAAAEAAAAAAAAAAAAuwAwAAAArAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T15:55:01.222Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 10,
-              "Title": "WindowConfigs.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Classes\\Settings\\WindowConfigs.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Models\\Classes\\Settings\\WindowConfigs.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Models\\Classes\\Settings\\WindowConfigs.cs",
-              "RelativeToolTip": "BadMC_Launcher\\Models\\Classes\\Settings\\WindowConfigs.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Title": "AppReadOnlyParameters.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\AppReadOnlyParameters.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Constants\\AppReadOnlyParameters.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\AppReadOnlyParameters.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Constants\\AppReadOnlyParameters.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAwAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T11:37:54.408Z",
+              "WhenOpened": "2025-02-03T08:12:33.761Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 14,
-              "Title": "GlobalUsings.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\GlobalUsings.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\GlobalUsings.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\GlobalUsings.cs",
-              "RelativeToolTip": "BadMC_Launcher\\GlobalUsings.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAGAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T11:07:29.833Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 13,
-              "Title": "Microsoft.WindowsAppSDK.SelfContained.targets",
-              "DocumentMoniker": "C:\\Users\\stars\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
-              "ToolTip": "C:\\Users\\stars\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
-              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\.nuget\\packages\\microsoft.windowsappsdk\\1.6.241114003\\buildTransitive\\Microsoft.WindowsAppSDK.SelfContained.targets",
-              "ViewState": "AgIAANUAAAAAAAAAAAASwOYAAAAIAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
-              "WhenOpened": "2025-01-26T11:13:24.065Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 18,
-              "Title": "BadMC_Launcher",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\BadMC_Launcher.csproj",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\BadMC_Launcher.csproj",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\BadMC_Launcher.csproj",
-              "RelativeToolTip": "BadMC_Launcher\\BadMC_Launcher.csproj",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-26T07:48:47.217Z",
+              "Title": "MainPage.xaml",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\Pages\\MainPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-30T14:55:00.27Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 12,
-              "Title": "BadMC_Launcher",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\BadMC_Launcher.csproj",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\BadMC_Launcher.csproj",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\BadMC_Launcher.csproj",
-              "RelativeToolTip": "BadMC_Launcher\\BadMC_Launcher.csproj",
-              "ViewState": "AgIAAB4AAAAAAAAAAAAAADAAAAA0AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
-              "WhenOpened": "2025-01-26T11:14:17.99Z",
+              "Title": "GlobalUsings.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\GlobalUsings.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\GlobalUsings.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\GlobalUsings.cs",
+              "RelativeToolTip": "BadMC_Launcher\\GlobalUsings.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAYAAAAqAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T15:22:22.26Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 19,
-              "Title": "BadMC_Launcher.MainPage.WinRTVtable.g.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\AppData\\Local\\Temp\\VSGeneratedDocuments\\b7088408-c77c-b2c1-33de-fda429a39f50\\BadMC_Launcher.MainPage.WinRTVtable.g.cs",
-              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\AppData\\Local\\Temp\\VSGeneratedDocuments\\b7088408-c77c-b2c1-33de-fda429a39f50\\BadMC_Launcher.MainPage.WinRTVtable.g.cs",
-              "ToolTip": "BadMC_Launcher.MainPage.WinRTVtable.g.cs [\u7531 Generator.WinRTAotSourceGenerator \u751F\u6210]",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAQAAAAOAAAAAAAAAA==",
+              "DocumentIndex": 11,
+              "Title": "App.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\App.xaml.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml.cs",
+              "RelativeToolTip": "BadMC_Launcher\\App.xaml.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA0AAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "OverriddenToolTip": "BadMC_Launcher.MainPage.WinRTVtable.g.cs [\u7531 Generator.WinRTAotSourceGenerator \u751F\u6210]",
-              "WhenOpened": "2025-01-26T06:26:03.096Z"
+              "WhenOpened": "2025-01-30T07:03:00.041Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
-              "DocumentIndex": 21,
-              "Title": "MainPage.g.i.cs",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\Views\\Pages\\MainPage.g.i.cs",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\Views\\Pages\\MainPage.g.i.cs",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\Views\\Pages\\MainPage.g.i.cs",
-              "RelativeToolTip": "BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\Views\\Pages\\MainPage.g.i.cs",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAASAAAAAAAAAA==",
+              "DocumentIndex": 13,
+              "Title": "App.g.i.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\App.g.i.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\App.g.i.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\App.g.i.cs",
+              "RelativeToolTip": "BadMC_Launcher\\obj\\Debug\\net9.0-windows10.0.26100\\App.g.i.cs",
+              "ViewState": "AgIAADUAAAAAAAAAAAAkwEQAAABEAAAAAAAAAA==",
               "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
-              "WhenOpened": "2025-01-26T06:25:58.121Z"
+              "WhenOpened": "2025-02-04T10:49:51.459Z",
+              "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 15,
-              "Title": "App.xaml",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\App.xaml",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml",
-              "RelativeToolTip": "BadMC_Launcher\\App.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA4AAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-26T01:44:56.136Z",
-              "EditorCaption": ""
-            },
-            {
-              "$type": "Document",
-              "DocumentIndex": 16,
-              "Title": "TransparentButton.xaml",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
-              "RelativeToolTip": "BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAIAAAA7AAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
-              "WhenOpened": "2025-01-26T02:13:05.948Z",
+              "Title": "Uno.Sdk.After.targets",
+              "DocumentMoniker": "C:\\Users\\stars\\.nuget\\packages\\uno.sdk\\5.6.20\\targets\\Uno.Sdk.After.targets",
+              "RelativeDocumentMoniker": "..\\..\\..\\..\\..\\..\\.nuget\\packages\\uno.sdk\\5.6.20\\targets\\Uno.Sdk.After.targets",
+              "ToolTip": "C:\\Users\\stars\\.nuget\\packages\\uno.sdk\\5.6.20\\targets\\Uno.Sdk.After.targets",
+              "RelativeToolTip": "..\\..\\..\\..\\..\\..\\.nuget\\packages\\uno.sdk\\5.6.20\\targets\\Uno.Sdk.After.targets",
+              "ViewState": "AgIAAHkAAAAAAAAAAAAqwIoAAAACAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003801|",
+              "WhenOpened": "2025-01-31T15:12:10.705Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
               "DocumentIndex": 17,
-              "Title": "app.manifest",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\app.manifest",
-              "RelativeDocumentMoniker": "BadMC_Launcher\\app.manifest",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\app.manifest",
-              "RelativeToolTip": "BadMC_Launcher\\app.manifest",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAABkAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001203|",
-              "WhenOpened": "2025-01-26T07:52:45.072Z",
+              "Title": "DashboardPage.xaml",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\Pages\\DashboardPage.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAQAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-02T05:03:22.807Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 16,
+              "Title": "UnitTest1.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher.Tests\\UnitTest1.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher.Tests\\UnitTest1.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher.Tests\\UnitTest1.cs",
+              "RelativeToolTip": "BadMC_Launcher.Tests\\UnitTest1.cs",
+              "ViewState": "AgIAABkAAAAAAAAAAAAAACQAAABXAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-04T10:33:16.052Z",
               "EditorCaption": ""
             },
             {
               "$type": "Document",
+              "DocumentIndex": 18,
+              "Title": "AppDataPath.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\AppDataPath.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Constants\\AppDataPath.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Constants\\AppDataPath.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Constants\\AppDataPath.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAgAAABEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T07:05:46.16Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 19,
+              "Title": "ExceptionHandlingService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\ExceptionHandling\\ExceptionHandlingService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\ExceptionHandling\\ExceptionHandlingService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\ExceptionHandling\\ExceptionHandlingService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\ExceptionHandling\\ExceptionHandlingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAwAAAAoAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T14:41:50.681Z"
+            },
+            {
+              "$type": "Document",
               "DocumentIndex": 20,
-              "Title": ".gitignore",
-              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\.gitignore",
-              "RelativeDocumentMoniker": ".gitignore",
-              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\.gitignore",
-              "RelativeToolTip": ".gitignore",
-              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAAAAAAAAAAAA==",
-              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.001001|",
-              "WhenOpened": "2025-01-25T14:27:37.72Z"
+              "Title": "IExceptionHandlingService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\ExceptionHandling\\IExceptionHandlingService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\ExceptionHandling\\IExceptionHandlingService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\ExceptionHandling\\IExceptionHandlingService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\ExceptionHandling\\IExceptionHandlingService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAuwAYAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T14:42:15.861Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 21,
+              "Title": "FrameNavigationService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FrameNavigation\\FrameNavigationService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\FrameNavigation\\FrameNavigationService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FrameNavigation\\FrameNavigationService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\FrameNavigation\\FrameNavigationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAcAAAAjAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T04:21:14.175Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 22,
+              "Title": "IFrameNavigationService.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FrameNavigation\\IFrameNavigationService.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Services\\FrameNavigation\\IFrameNavigationService.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Services\\FrameNavigation\\IFrameNavigationService.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Services\\FrameNavigation\\IFrameNavigationService.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAoAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-02T04:21:33.134Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 24,
+              "Title": "App.xaml",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\App.xaml",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\App.xaml",
+              "RelativeToolTip": "BadMC_Launcher\\App.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAA0AAAAnAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-01-30T07:02:52.161Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 23,
+              "Title": "BadMC_Launcher.csproj",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\BadMC_Launcher.csproj",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\BadMC_Launcher.csproj",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\BadMC_Launcher.csproj",
+              "RelativeToolTip": "BadMC_Launcher\\BadMC_Launcher.csproj",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAMAAAAEAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000758|",
+              "WhenOpened": "2025-01-30T07:05:31.587Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 25,
+              "Title": "TransparentButton.xaml",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\Styles\\TransparentButton.xaml",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.003549|",
+              "WhenOpened": "2025-02-01T16:29:35.802Z",
+              "EditorCaption": ""
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 26,
+              "Title": "Program.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Platforms\\Desktop\\Program.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Platforms\\Desktop\\Program.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Platforms\\Desktop\\Program.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Platforms\\Desktop\\Program.cs",
+              "ViewState": "AgIAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAAA==",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-02-01T15:18:09.232Z"
+            },
+            {
+              "$type": "Document",
+              "DocumentIndex": 27,
+              "Title": "MainPage.xaml.cs",
+              "DocumentMoniker": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\MainPage.xaml.cs",
+              "RelativeDocumentMoniker": "BadMC_Launcher\\Views\\MainPage.xaml.cs",
+              "ToolTip": "C:\\Users\\stars\\Documents\\Development\\Tasks\\Projects\\Applications\\BadMC_Launcher\\BadMC_Launcher\\Views\\MainPage.xaml.cs",
+              "RelativeToolTip": "BadMC_Launcher\\Views\\MainPage.xaml.cs",
+              "Icon": "ae27a6b0-e345-4288-96df-5eaf394ee369.000738|",
+              "WhenOpened": "2025-01-30T07:17:45.545Z"
             }
           ]
         }

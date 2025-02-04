@@ -6,18 +6,13 @@
     See https://aka.platform.uno/using-uno-sdk#implicit-packages for more information regarding the Implicit Packages.
   -->
   <ItemGroup>
-    <PackageVersion Include="coverlet.collector" Version="6.0.4">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageVersion>
+    <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="FluentAssertions" Version="8.0.1" />
+    <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.12.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
-    <PackageVersion Include="MinecraftLaunch" Version="3.1.0" />
     <PackageVersion Include="NUnit" Version="4.3.2" />
     <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0-beta.5" />
-    <PackageVersion Include="GitHubActionsTestLogger" Version="2.4.1">
-      <PrivateAssets>all</PrivateAssets>
-      <IncludeAssets>runtime; build; native; contentfiles; analyzers; buildtransitive</IncludeAssets>
-    </PackageVersion>
+    <PackageVersion Include="GitHubActionsTestLogger" Version="2.4.1" />
+    <PackageVersion Include="Uno.WinUI.DevServer.Messaging" Version="5.7.0-dev.368" />
   </ItemGroup>
 </Project>

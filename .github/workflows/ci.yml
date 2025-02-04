@@ -3,13 +3,13 @@ name: CI
 on:
   push:
     branches:
-      - Release
+      - main
       - release/**
 
   pull_request:
     types: [opened, synchronize, reopened]
     branches:
-      - Release
+      - main
       - release/**
 env:
   STEP_TIMEOUT_MINUTES: 60

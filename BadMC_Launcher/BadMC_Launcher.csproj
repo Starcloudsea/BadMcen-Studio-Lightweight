@@ -1,83 +1,69 @@
-<Project Sdk="Uno.Sdk">
-    <PropertyGroup>
-        <TargetFrameworks>net9.0-desktop;net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0</TargetFrameworks>
+﻿<Project Sdk="Uno.Sdk">
+  <PropertyGroup>
+    <TargetFrameworks>net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0-desktop;net9.0</TargetFrameworks>
+    <LangVersion>preview</LangVersion>
 
-        <OutputType>Exe</OutputType>
-        <UnoSingleProject>true</UnoSingleProject>
+    <OutputType>Exe</OutputType>
+    <UnoSingleProject>true</UnoSingleProject>
 
-        <!-- Display name -->
-        <ApplicationTitle>BadMC_Launcher</ApplicationTitle>
-        <!-- App Identifier -->
-        <ApplicationId>org.BadBC.BadMC_Launcher</ApplicationId>
-        <!-- Versions -->
-        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-        <ApplicationVersion>1</ApplicationVersion>
-        <!-- Package Publisher -->
-        <ApplicationPublisher>O=BadMC_Launcher</ApplicationPublisher>
-        <!-- Package Description -->
-        <Description>BadMC_Launcher powered by Uno Platform.</Description>
-        <!--
-          If you encounter this error message:
-    
-            error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
-            Please update to a newer .NET SDK in order to reference this assembly.
-    
-          This means that the two packages below must be aligned with the "build" version number of
-          the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
-          must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
-        -->
-        <!-- <WindowsSdkPackageVersion>10.0.22621.28</WindowsSdkPackageVersion> -->
+    <!-- Display name -->
+    <ApplicationTitle>BadMC_Launcher</ApplicationTitle>
+    <!-- App Identifier -->
+    <ApplicationId>org.BadBC.BadMC_Launcher</ApplicationId>
+    <!-- Versions -->
+    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+    <ApplicationVersion>1</ApplicationVersion>
+    <!-- Package Publisher -->
+    <ApplicationPublisher>Starcloudsea</ApplicationPublisher>
+    <!-- Package Description -->
+    <Description>BadMC_Launcher powered by Uno Platform.</Description>
+    <!--
+      If you encounter this error message:
 
-        <!--
-          UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
-          https://aka.platform.uno/singleproject-features
-        -->
-        <UnoFeatures>
-            Lottie;
-            MediaElement;
-            Toolkit;
-            Mvvm;
-            ThemeService;
-        </UnoFeatures>
-        <ApplicationManifest>app.manifest</ApplicationManifest>
-    </PropertyGroup>
-    <ItemGroup>
-      <Folder Include="Strings\zh-CN\" />
-    </ItemGroup>
-    <ItemGroup>
-      <Compile Update="Views\Pages\MainPage.xaml.cs">
-        <DependentUpon>MainPage.xaml</DependentUpon>
-        <IsDefaultItem>true</IsDefaultItem>
-      </Compile>
-      <Compile Remove="Models\Base\IConfigRegister.cs" />
-      <Compile Update="Strings\en\Resources1.Designer.cs">
-        <DesignTime>True</DesignTime>
-        <AutoGen>True</AutoGen>
-        <DependentUpon>Resources1.resx</DependentUpon>
-      </Compile>
-      <Compile Remove="Views\ass.xaml.cs" />
-    </ItemGroup>
-    <ItemGroup>
-      <PackageReference Include="MinecraftLaunch" />
-    </ItemGroup>
-    <ItemGroup>
-      <EmbeddedResource Update="Strings\en\Resources1.resx">
-        <Generator>ResXFileCodeGenerator</Generator>
-        <LastGenOutput>Resources1.Designer.cs</LastGenOutput>
-      </EmbeddedResource>
-    </ItemGroup>
-    <ItemGroup>
-      <Page Remove="Views\ass.xaml" />
-    </ItemGroup>
-    <ItemGroup>
-      <MauiXaml Include="Views\MauiXaml1.xaml">
-        <IsDefaultItem>true</IsDefaultItem>
-      </MauiXaml>
-    </ItemGroup>
-    <ItemGroup>
-      <Page Update="Views\Styles\TransparentButton.xaml">
-        <Generator>MSBuild:Compile</Generator>
-      </Page>
-    </ItemGroup>
+        error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
+        Please update to a newer .NET SDK in order to reference this assembly.
+
+      This means that the two packages below must be aligned with the "build" version number of
+      the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
+      must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
+    -->
+    <!-- <WindowsSdkPackageVersion>10.0.22621.28</WindowsSdkPackageVersion> -->
+
+    <!--
+      UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
+      https://aka.platform.uno/singleproject-features
+    -->
+    <UnoFeatures>
+      Lottie;
+      Hosting;
+      Toolkit;
+      Logging;
+      LoggingSerilog;
+      Mvvm;
+      ThemeService;
+    </UnoFeatures>
+  </PropertyGroup>
+  <ItemGroup>
+    <Folder Include="Models\Interface\" />
+  </ItemGroup>
+  <ItemGroup>
+    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
+    <PackageReference Include="Uno.WinUI.DevServer.Messaging" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\BlankPage1.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Styles\TransparentButton.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Pages\DashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
 
 </Project>

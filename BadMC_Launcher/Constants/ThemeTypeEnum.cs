@@ -4,8 +4,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BadMC_Launcher.Models.Classes.Settings;
-
-class ThemeConfig {
-
+namespace BadMC_Launcher.Constants;
+public enum ThemeTypeEnum {
+    Light,
+    Dark
 }
