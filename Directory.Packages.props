@@ -10,9 +10,10 @@
     <PackageVersion Include="FluentAssertions" Version="8.0.1" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.12.0" />
     <PackageVersion Include="Microsoft.NET.Test.Sdk" Version="17.12.0" />
+    <PackageVersion Include="MinecraftLaunch" Version="4.0.0-preview04" />
     <PackageVersion Include="NUnit" Version="4.3.2" />
-    <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0-beta.5" />
+    <PackageVersion Include="NUnit3TestAdapter" Version="5.0.0-beta.7" />
     <PackageVersion Include="GitHubActionsTestLogger" Version="2.4.1" />
-    <PackageVersion Include="Uno.WinUI.DevServer.Messaging" Version="5.7.0-dev.368" />
+    <PackageVersion Include="Uno.WinUI.DevServer.Messaging" Version="5.7.0-dev.427" />
   </ItemGroup>
 </Project>

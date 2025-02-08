@@ -8,9 +8,38 @@
     mc:Ignorable="d">
 
     <Grid>
-        <Border Background="Aqua" CornerRadius="8" Margin="0, 16, 16, 16" Width="336" HorizontalAlignment="Right">
+        <!--LaunchPad-->
+        <Border Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}"
+                CornerRadius="8"
+                Margin="0, 16, 16, 16"
+                Width="336"
+                HorizontalAlignment="Right">
             <Grid>
-                
+                <Button x:Name="LaunchButton"
+                        VerticalAlignment="Bottom"
+                        HorizontalAlignment="Stretch"
+                        Height="80"
+                        Style="{StaticResource AccentButtonStyle}"
+                        CornerRadius="0"
+                        BorderThickness="0"
+                        BorderBrush="Transparent"
+                        HorizontalContentAlignment="left">
+                    <StackPanel Orientation="Horizontal" Spacing="16" Margin="8, 0, 0, 0">
+                        <Border Height="52" Width="52" HorizontalAlignment="Left" CornerRadius="8" BorderThickness="4" BorderBrush="{ThemeResource ControlFillColorDefaultBrush}">
+                            <Border.Background>
+                                <ImageBrush Stretch="UniformToFill" ImageSource="\Assets\Icons\MinecraftIcons\Drowned.png"/>
+                            </Border.Background>
+                        </Border>
+                        <StackPanel Spacing="2">
+                            <TextBlock x:Uid="DashboardLaunchButtonName"
+                                       FontSize="22"
+                                       FontWeight="Bold"/>
+                            <TextBlock Text="{Binding GameEntryName}"
+                                       FontSize="18"
+                                       FontWeight="Bold"/>
+                        </StackPanel>
+                    </StackPanel>
+                </Button>
             </Grid>
         </Border>
     </Grid>

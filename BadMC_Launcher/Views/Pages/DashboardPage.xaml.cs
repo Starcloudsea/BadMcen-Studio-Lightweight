@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
+using BadMC_Launcher.ViewModels.Pages;
 using Microsoft.UI.Xaml;
 using Microsoft.UI.Xaml.Controls;
 using Microsoft.UI.Xaml.Controls.Primitives;
@@ -22,5 +23,6 @@ namespace BadMC_Launcher.Views.Pages;
 public sealed partial class DashboardPage : Page {
     public DashboardPage() {
         this.InitializeComponent();
+        DataContext = new DashboardPageViewModel();
     }
 }

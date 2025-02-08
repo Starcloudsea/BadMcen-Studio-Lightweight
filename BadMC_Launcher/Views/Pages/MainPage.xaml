@@ -10,7 +10,7 @@
             <RowDefinition Height="*"/>
         </Grid.RowDefinitions>
         <!-- TitleBar -->
-        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
+        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
             <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
                 <Button Style="{StaticResource TransparentButton}" Height="36" Width="36">
                     <FontIcon Glyph="&#xE7C4;"/>

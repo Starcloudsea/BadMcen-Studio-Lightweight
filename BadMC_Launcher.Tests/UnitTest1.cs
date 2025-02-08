@@ -6,6 +6,9 @@ using BadMC_Launcher.Models.Classes;
 using BadMC_Launcher.Services.FileManager;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml.Media.Imaging;
+using MinecraftLaunch.Base.Models.Game;
+using MinecraftLaunch.Extensions;
+using MinecraftLaunch.Utilities;
 
 namespace BadMC_Launcher.Tests;
 
@@ -34,7 +37,10 @@ public class UnitTest1
         //    var redirectUrl = response.Headers.Location?.AbsoluteUri;
         //}
         //response.EnsureSuccessStatusCode();
-        new BitmapImage(new Uri("C:\\Users\\stars\\Pictures\\Camera Roll\\fcxbb.png"));
-        Assert.Pass();
+
+        //new BitmapImage(new Uri("C:\\Users\\stars\\Pictures\\Camera Roll\\fcxbb.png"));
+        JavaEntry javaEntry = new JavaEntry();
+        javaEntry = await JavaUtil.GetJavaInfoAsync(@"C:\Program Files\Zulu\zulu-23\bin\java.exe");
+        Assert.Pass(javaEntry.JavaVersion.ToString());
     }
 }

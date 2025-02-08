@@ -11,7 +11,7 @@ using Microsoft.UI.Xaml.Media.Imaging;
 
 namespace BadMC_Launcher.Services.Settings.ThemeSetting;
 public class ThemeSettingService : IThemeSettingService {
-    private IFileService? fileService = App.Current.Host?.Services.GetService<IFileService>();
+    private IFileService? fileService = AppParameters.Services.GetService<IFileService>();
     private BackgroundTypeEnum backgroundType = BackgroundTypeEnum.StaticImage;
     private ThemeTypeEnum themeType = ThemeTypeEnum.Light;
     private string imageBackgroundName = "WALLPAPER.PNG";
@@ -70,7 +70,7 @@ public class ThemeSettingService : IThemeSettingService {
     }
 
     public ThemeSettingService() {
-        var fileService = App.Current.Host?.Services.GetService<IFileService>();
+        var fileService = AppParameters.Services.GetService<IFileService>();
         if (fileService != null) {
             fileService.CheckFolderAndFile(Path.Combine(AppDataPath.AssetsPath, "Wallpapers"), false);
         }
@@ -79,7 +79,7 @@ public class ThemeSettingService : IThemeSettingService {
         }
     }
 
-    public async void SetBackground(Action<Brush> backgroundChanged = null) {
+    public async void SetBackground(Action<Brush>? backgroundChanged = null) {
         if (backgroundChanged == null) {
             //TODO: 这应该得从代码介入了，应该得Dialog(
             return;

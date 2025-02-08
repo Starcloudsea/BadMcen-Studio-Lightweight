@@ -5,6 +5,7 @@ using BadMC_Launcher.ViewModels.Pages;
 using BadMC_Launcher.Views.Pages;
 using Microsoft.UI;
 using Microsoft.UI.Xaml.Media.Imaging;
+using Microsoft.Windows.ApplicationModel.Resources;
 using Serilog;
 using Uno.Resizetizer;
 
@@ -73,9 +74,13 @@ public partial class App : Application {
                 })
                 .ConfigureServices((context, services) => {
                     // TODO: Register your services
+                    services.AddSingleton<HttpClient>();
+                    services.AddSingleton<ResourceLoader>();
+
                     services.AddSingleton<IExceptionHandlingService, ExceptionHandlingService>();
                     services.AddSingleton<IFileService, FileService>();
                     services.AddSingleton<IFrameNavigationService, FrameNavigationService>();
+                    services.AddSingleton<IThemeSettingService, ThemeSettingService>();
                     services.AddSingleton<IThemeSettingService, ThemeSettingService>();
                 })
             );
@@ -86,7 +91,7 @@ public partial class App : Application {
         if (winService != null) {
             MainWindow.AppWindow.Title = winService.WindowName;
         }
-        MainWindow.AppWindow.Resize(AppReadOnlyParameters.windowSize);
+        MainWindow.AppWindow.Resize(AppParameters.windowSize);
         MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
 #if WINDOWS
         MainWindow.AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;

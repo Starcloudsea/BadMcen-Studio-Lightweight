@@ -8,7 +8,7 @@ namespace BadMC_Launcher.ViewModels.Pages;
 public partial class MainPageViewModel : ObservableObject {
 
     public MainPageViewModel() {
-        var service = App.Current.Host?.Services.GetService<IThemeSettingService>();
+        var service = AppParameters.Services.GetService<IThemeSettingService>();
         if (service != null) {
             WindowName = service.WindowName;
         }
@@ -19,7 +19,7 @@ public partial class MainPageViewModel : ObservableObject {
     public partial string? WindowName { get; set; }
 
     public void SetInitialPage(Frame frame) {
-        var service = App.Current.Host?.Services.GetService<IFrameNavigationService>();
+        var service = AppParameters.Services.GetService<IFrameNavigationService>();
         if (service != null) {
             service.NavigateTo<DashboardPage>(frame);
         }
@@ -27,7 +27,7 @@ public partial class MainPageViewModel : ObservableObject {
 
     public void SetBackground(Action<Brush> brushAction) {
         
-        var service = App.Current.Host?.Services.GetService<IThemeSettingService>();
+        var service = AppParameters.Services.GetService<IThemeSettingService>();
         if (service == null) {
             //TODO: Exception Dialog
             return;
@@ -40,3 +40,4 @@ public partial class MainPageViewModel : ObservableObject {
         });
     }
 }
+ 
