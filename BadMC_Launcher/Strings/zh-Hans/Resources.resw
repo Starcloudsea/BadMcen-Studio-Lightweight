@@ -126,4 +126,13 @@
   <data name="DashboardLaunchButtonTagDefault" xml:space="preserve">
     <value>未选择本体_( ﾟДﾟ)ﾉ</value>
   </data>
+  <data name="MinecraftTitleName" xml:space="preserve">
+    <value>BadMC Launcher - 让我们一起MINECRAFT！</value>
+  </data>
+  <data name="MinecraftListRefresh.Text" xml:space="preserve">
+    <value>刷新</value>
+  </data>
+  <data name="MinecraftListsManager.Text" xml:space="preserve">
+    <value>管理 .minecraft 文件夹</value>
+  </data>
 </root>

@@ -1,8 +1,10 @@
-using BadMC_Launcher.Services.ExceptionHandling;
-using BadMC_Launcher.Services.FrameNavigation;
+using BadMC_Launcher.Services;
+using BadMC_Launcher.Services.Settings.MinecraftConfig;
+using BadMC_Launcher.Services.Settings.SingleMinecraftConfig;
 using BadMC_Launcher.Services.Settings.ThemeSetting;
 using BadMC_Launcher.ViewModels.Pages;
 using BadMC_Launcher.Views.Pages;
+using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.UI;
 using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.Windows.ApplicationModel.Resources;
@@ -16,9 +18,7 @@ public partial class App : Application {
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
     public App() {
-        new ImageBrush();
         this.InitializeComponent();
-        
     }
 
     public static new App Current => (App)Application.Current;
@@ -74,25 +74,27 @@ public partial class App : Application {
                 })
                 .ConfigureServices((context, services) => {
                     // TODO: Register your services
+                    //Register third-party class
                     services.AddSingleton<HttpClient>();
                     services.AddSingleton<ResourceLoader>();
 
-                    services.AddSingleton<IExceptionHandlingService, ExceptionHandlingService>();
-                    services.AddSingleton<IFileService, FileService>();
-                    services.AddSingleton<IFrameNavigationService, FrameNavigationService>();
-                    services.AddSingleton<IThemeSettingService, ThemeSettingService>();
-                    services.AddSingleton<IThemeSettingService, ThemeSettingService>();
+                    //Register custom class
+                    services.AddSingleton<ExceptionHandlingService>();
+                    services.AddSingleton<FileService>();
+                    services.AddSingleton<FrameNavigationService>();
+                    services.AddSingleton<MinecraftConfigService>();
+                    services.AddSingleton<ThemeSettingService>();
+                    services.AddTransient<SingleMinecraftConfigService>();
                 })
             );
         MainWindow = builder.Window;
         Host = builder.Build();
 
-        var winService = Host?.Services.GetService<IThemeSettingService>();
-        if (winService != null) {
-            MainWindow.AppWindow.Title = winService.WindowName;
-        }
+        
+        MainWindow.AppWindow.Title = GetService<ThemeSettingService>().WindowName;
         MainWindow.AppWindow.Resize(AppParameters.windowSize);
         MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
+        //TODO: 要是Uno Platform 3月还没回信，那自定义拖拽区域估计只能自己写啦（悲）不过Desktop的三大金刚键肯定得自己写啦（大悲）
 #if WINDOWS
         MainWindow.AppWindow.TitleBar.ButtonBackgroundColor = Colors.Transparent;
         MainWindow.AppWindow.TitleBar.ButtonInactiveBackgroundColor = Colors.Transparent;
@@ -120,7 +122,29 @@ public partial class App : Application {
             // parameter
             rootFrame.Navigate(typeof(MainPage), args.Arguments);
         }
+
+        //Get Configs
+        GetSetting();
+
         // Ensure the current window is active
         MainWindow.Activate();
+        
+    }
+
+    //Get Service
+    public static T GetService<T>() {
+        var services = Current.Host?.Services;
+        if (services != null) {
+            var service = services.GetService<T>();
+            if (service != null) {
+                return service;
+            }
+        }
+        throw new InvalidOperationException("Service not found.");
+    }
+
+    private void GetSetting() {
+        GetService<MinecraftConfigService>().SyncSettingGet();
+        GetService<ThemeSettingService>().SyncSettingGet();
     }
 }

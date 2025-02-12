@@ -6,6 +6,8 @@
     See https://aka.platform.uno/using-uno-sdk#implicit-packages for more information regarding the Implicit Packages.
   -->
   <ItemGroup>
+    <PackageVersion Include="CommunityToolkit.WinUI.Controls.MetadataControl" Version="8.2.250129-preview2" />
+    <PackageVersion Include="CommunityToolkit.WinUI.Lottie" Version="8.1.240821" />
     <PackageVersion Include="coverlet.collector" Version="6.0.4" />
     <PackageVersion Include="FluentAssertions" Version="8.0.1" />
     <PackageVersion Include="Microsoft.CodeAnalysis.CSharp.Scripting" Version="4.12.0" />

@@ -17,6 +17,10 @@
     <ApplicationPublisher>Starcloudsea</ApplicationPublisher>
     <!-- Package Description -->
     <Description>BadMC_Launcher powered by Uno Platform.</Description>
+    <!-- Native AOT Support -->
+      <!-- TODO: 在Mvvm支持AOT之前就憋想取消这个的注释了吧（悲） -->
+    <!--<PublishAot>true</PublishAot>-->
+
     <!--
       If you encounter this error message:
 
@@ -44,13 +48,14 @@
     </UnoFeatures>
   </PropertyGroup>
   <ItemGroup>
-    <Folder Include="Models\Interface\" />
-  
+    <TrimmerRootAssembly Include="BadMC_Launcher" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.WinUI.Controls.MetadataControl" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
     <PackageReference Include="MinecraftLaunch" />
     <PackageReference Include="Uno.WinUI.DevServer.Messaging" />
+
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Pages\BlankPage1.xaml">
@@ -64,6 +69,20 @@
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Pages\DashboardPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows10.0.26100'">
+    <PackageReference Include="CommunityToolkit.WinUI.Lottie" />
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Styles\ItemTemplate\MinecraftPathItemsTemplate.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Page Update="Views\Styles\ItemTemplate\MinecraftItemsTemplate.xaml">
+      <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
   </ItemGroup>

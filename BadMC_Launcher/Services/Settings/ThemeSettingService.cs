@@ -4,14 +4,15 @@ using System.Drawing;
 using System.Linq;
 using System.Text;
 using System.Text.Json;
+using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using BadMC_Launcher.Models.Classes;
+using BadMC_Launcher.Models.Interface;
+using BadMC_Launcher.Utilities;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using Microsoft.UI.Xaml.Media.Imaging;
 
 namespace BadMC_Launcher.Services.Settings.ThemeSetting;
-public class ThemeSettingService : IThemeSettingService {
-    private IFileService? fileService = AppParameters.Services.GetService<IFileService>();
+public class ThemeSettingService : IConfigClass {
     private BackgroundTypeEnum backgroundType = BackgroundTypeEnum.StaticImage;
     private ThemeTypeEnum themeType = ThemeTypeEnum.Light;
     private string imageBackgroundName = "WALLPAPER.PNG";
@@ -62,7 +63,7 @@ public class ThemeSettingService : IThemeSettingService {
         get => windowName;
         set {
             windowName = value;
-            if (!SyncSettingSet(value)) {
+            if (!SyncSettingSet()) {
                 //TODO: Exception Dialog
             }
 
@@ -70,13 +71,7 @@ public class ThemeSettingService : IThemeSettingService {
     }
 
     public ThemeSettingService() {
-        var fileService = AppParameters.Services.GetService<IFileService>();
-        if (fileService != null) {
-            fileService.CheckFolderAndFile(Path.Combine(AppDataPath.AssetsPath, "Wallpapers"), false);
-        }
-        if (!SyncSettingGet()) {
-            //TODO: Exception Dialog
-        }
+        
     }
 
     public async void SetBackground(Action<Brush>? backgroundChanged = null) {
@@ -84,6 +79,7 @@ public class ThemeSettingService : IThemeSettingService {
             //TODO: 这应该得从代码介入了，应该得Dialog(
             return;
         }
+        App.GetService<FileService>().CheckFolderAndFile(Path.Combine(AppDataPath.AssetsPath, "Wallpapers"), false);
         switch (backgroundType) {
             case BackgroundTypeEnum.SolidColor:
                 var color = ColorTranslator.FromHtml(solidColorBackgroundCode);
@@ -106,14 +102,20 @@ public class ThemeSettingService : IThemeSettingService {
     }
 
     public bool SyncSettingGet() {
-        if (fileService != null && fileService.ReadConfig<IThemeSettingService>(Path.Combine(AppDataPath.ConfigsPath, @"Settings\WindowSettings.json"), this, out var returnValue) && returnValue != null) {
+        if (App.GetService<FileService>().ReadConfig(Path.Combine(AppDataPath.ConfigsPath, @"Settings\ThemeSettings.json"), ThemeSettingServiceContext.Default.ThemeSettingService, out var jsonClass) && jsonClass != null) {
+            backgroundType = jsonClass.BackgroundType;
+            themeType = jsonClass.ThemeType;
+            imageBackgroundName = jsonClass.ImageBackgroundName;
+            backgroundStretch = jsonClass.BackgroundStretch;
+            solidColorBackgroundCode = jsonClass.SolidColorBackgroundCode;
+            windowName = jsonClass.WindowName;
             return true;
         }
         return false;
     }
 
-    public bool SyncSettingSet<T>(T settingValue) {
-        return fileService != null && fileService.WriteConfig(Path.Combine(AppDataPath.ConfigsPath, @"Settings\WindowSettings.json"), this);
+    public bool SyncSettingSet() {
+        return App.GetService<FileService>().WriteConfig<ThemeSettingService>(Path.Combine(AppDataPath.ConfigsPath, @"Settings\ThemeSettings.json"), this, ThemeSettingServiceContext.Default.ThemeSettingService);
     }
     public void SetBrushAsync<T>(T color, Action<Brush> backgroundChanged) {
         if (typeof(T) == typeof(Windows.UI.Color) && color != null) {
@@ -130,3 +132,7 @@ public class ThemeSettingService : IThemeSettingService {
         throw new InvalidOperationException("Unsupported type for SetBrushAsync");
     }
 }
+
+[JsonSourceGenerationOptions(WriteIndented = true)]
+[JsonSerializable(typeof(ThemeSettingService))]
+internal partial class ThemeSettingServiceContext : JsonSerializerContext;

@@ -5,8 +5,8 @@
     xmlns:local="using:BadMC_Launcher.Views.Pages"
     xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
     xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
     mc:Ignorable="d">
-
     <Grid>
         <!--LaunchPad-->
         <Border Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}"
@@ -15,30 +15,131 @@
                 Width="336"
                 HorizontalAlignment="Right">
             <Grid>
+                <!--Account View-->
+                
+                <!--Card-->
+                
+                <!--Launch Button-->
                 <Button x:Name="LaunchButton"
-                        VerticalAlignment="Bottom"
-                        HorizontalAlignment="Stretch"
-                        Height="80"
-                        Style="{StaticResource AccentButtonStyle}"
-                        CornerRadius="0"
-                        BorderThickness="0"
-                        BorderBrush="Transparent"
-                        HorizontalContentAlignment="left">
-                    <StackPanel Orientation="Horizontal" Spacing="16" Margin="8, 0, 0, 0">
-                        <Border Height="52" Width="52" HorizontalAlignment="Left" CornerRadius="8" BorderThickness="4" BorderBrush="{ThemeResource ControlFillColorDefaultBrush}">
+                            VerticalAlignment="Bottom"
+                            HorizontalAlignment="Stretch"
+                            Height="80"
+                            Style="{StaticResource AccentButtonStyle}"
+                            CornerRadius="0"
+                            BorderThickness="0"
+                            BorderBrush="Transparent"
+                            HorizontalContentAlignment="Stretch">
+                    <Grid Margin="0, 0, 0, 0">
+                        <Grid.ColumnDefinitions>
+                            <ColumnDefinition Width="60"/>
+                            <ColumnDefinition Width="*"/>
+                            <ColumnDefinition Width="60"/>
+                        </Grid.ColumnDefinitions>
+                        <Border Grid.Column="0"
+                                    Height="52"
+                                    Width="52"
+                                    HorizontalAlignment="Center"
+                                    CornerRadius="8"
+                                    BorderThickness="4"
+                                    BorderBrush="{ThemeResource ControlFillColorDefaultBrush}">
                             <Border.Background>
-                                <ImageBrush Stretch="UniformToFill" ImageSource="\Assets\Icons\MinecraftIcons\Drowned.png"/>
+                                <ImageBrush Stretch="UniformToFill"
+                                            ImageSource="\Assets\Icons\MinecraftIcons\Drowned.png"/>
                             </Border.Background>
                         </Border>
-                        <StackPanel Spacing="2">
+                        <StackPanel Margin="8, 0, 0, 0"
+                                        Grid.Column="1"
+                                        Spacing="2">
                             <TextBlock x:Uid="DashboardLaunchButtonName"
-                                       FontSize="22"
-                                       FontWeight="Bold"/>
+                                           FontSize="22"
+                                           FontWeight="Bold"/>
                             <TextBlock Text="{Binding GameEntryName}"
-                                       FontSize="18"
-                                       FontWeight="Bold"/>
+                                           FontSize="16"
+                                           FontWeight="Bold"
+                                           TextTrimming="CharacterEllipsis"/>
                         </StackPanel>
-                    </StackPanel>
+                        <Button
+                                Grid.Column="2"
+                                HorizontalAlignment="Right"
+                                Height="36"
+                                Width="36"
+                                Command="{Binding VersionButtonCommand}"
+                                BorderThickness="0" 
+                                BorderBrush="Transparent"
+                                Background="Transparent">
+                            <AnimatedIcon Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}"
+                                              Height="20"
+                                              Width="20"
+                                              HorizontalAlignment="Center"
+                                              VerticalAlignment="Center">
+                                <AnimatedIcon.Source>
+                                    <!-- 有BUG！！！ -->
+                                    <animatedvisuals:AnimatedChevronUpDownSmallVisualSource/>
+                                </AnimatedIcon.Source>
+                            </AnimatedIcon>
+                            <Button.Flyout>
+                                <Flyout>
+                                    <Flyout.FlyoutPresenterStyle>
+                                        <Style TargetType="FlyoutPresenter">
+                                            <Setter Property="Padding" Value="0"/>
+                                            <Setter Property="CornerRadius" Value="8"/>
+                                        </Style>
+                                    </Flyout.FlyoutPresenterStyle>
+                                    <Grid Height="400" Width="400">
+                                        <Grid.RowDefinitions>
+                                            <RowDefinition Height="48"/>
+                                            <RowDefinition Height="*"/>
+                                        </Grid.RowDefinitions>
+                                        <!--Menu-->
+                                        <Grid Grid.Row="0"
+                                              HorizontalAlignment="Stretch"
+                                              Margin="0, 4, 0, 0">
+                                            <Grid.ColumnDefinitions>
+                                                <ColumnDefinition Width="*"/>
+                                                <ColumnDefinition Width="48"/>
+                                            </Grid.ColumnDefinitions>
+                                            <ComboBox Grid.Column="0"
+                                                      Margin="8, 0, 0, 0"
+                                                      Height="36"
+                                                      VerticalAlignment="Center"
+                                                      ItemsSource="{Binding MinecraftPathList}"
+                                                      ItemTemplate="{StaticResource MinecraftPathItemsTemplateSecondary}">
+                                            </ComboBox>
+                                            <Button Grid.Column="1"
+                                                    VerticalAlignment="Center"
+                                                    Padding="0"
+                                                    Width="36"
+                                                    Height="36"
+                                                    BorderThickness="0"
+                                                    Background="Transparent">
+                                                <FontIcon Glyph="&#xE712;" />
+                                                <Button.Flyout>
+                                                    <MenuFlyout>
+                                                        <MenuFlyoutItem x:Uid="MinecraftListRefresh">
+                                                            <MenuFlyoutItem.Icon>
+                                                                <FontIcon Glyph="&#xE72C;"/>
+                                                            </MenuFlyoutItem.Icon>
+                                                        </MenuFlyoutItem>
+                                                        <MenuFlyoutItem x:Uid="MinecraftListsManager">
+                                                            <MenuFlyoutItem.Icon>
+                                                                <FontIcon Glyph="&#xE8B7;"/>
+                                                            </MenuFlyoutItem.Icon>
+                                                        </MenuFlyoutItem>
+                                                    </MenuFlyout>
+                                                </Button.Flyout>
+                                            </Button>
+                                        </Grid>
+                                        <!--Minecraft List-->
+                                        <ListView Grid.Row="1"
+                                                  Margin="0, 6, 0, 0"
+                                                  ItemTemplate="{StaticResource MinecraftItemsTemplateSecondary}"
+                                                  ItemsSource="{Binding MinecraftList}">
+                                        </ListView>
+                                    </Grid>
+                                </Flyout>
+                            </Button.Flyout>
+                        </Button>
+                    </Grid>
                 </Button>
             </Grid>
         </Border>

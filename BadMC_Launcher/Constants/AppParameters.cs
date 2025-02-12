@@ -3,6 +3,8 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Runtime.InteropServices;
 using System.Text;
+using System.Text.Encodings.Web;
+using System.Text.Json;
 using System.Threading.Tasks;
 using Microsoft.Windows.ApplicationModel.Resources;
 using Uno.UI.RemoteControl.Host;
@@ -14,5 +16,8 @@ public static class AppParameters {
         Width = 948,
         Height = 624
     };
-    public readonly static IServiceProvider Services = App.Current.Host?.Services ?? throw new COMException();
+    public readonly static JsonSerializerOptions JsonOptions = new JsonSerializerOptions {
+        Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
+        WriteIndented = true
+    };
 }

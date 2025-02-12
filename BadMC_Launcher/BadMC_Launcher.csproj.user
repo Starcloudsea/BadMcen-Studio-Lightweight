@@ -22,6 +22,12 @@
     <Page Update="Views\Pages\DashboardPage.xaml">
       <SubType>Designer</SubType>
     </Page>
+    <Page Update="Views\Styles\ItemTemplate\MinecraftItemsTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\Styles\ItemTemplate\MinecraftPathItemsTemplate.xaml">
+      <SubType>Designer</SubType>
+    </Page>
     <Page Update="Views\Styles\TransparentButton.xaml">
       <SubType>Designer</SubType>
     </Page>

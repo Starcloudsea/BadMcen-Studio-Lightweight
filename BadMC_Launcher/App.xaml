@@ -10,6 +10,8 @@
                 <!-- Load Uno.UI.Toolkit resources -->
                 <ToolkitResources xmlns="using:Uno.Toolkit.UI" />
                 <ResourceDictionary Source="/Views/Styles/TransparentButton.xaml"/>
+                <ResourceDictionary Source="/Views/Styles/ItemTemplate/MinecraftPathItemsTemplate.xaml"/>
+                <ResourceDictionary Source="/Views/Styles/ItemTemplate/MinecraftItemsTemplate.xaml"/>
             </ResourceDictionary.MergedDictionaries>
             <!-- Add resources here -->
         </ResourceDictionary>

@@ -2,10 +2,15 @@ using System.Reflection;
 using System.Security;
 using System.Text.Encodings.Web;
 using System.Text.Json;
+using System.Text.Json.Serialization;
+using System.Text.Json.Serialization.Metadata;
+using BadMC_Launcher.Services.Settings.MinecraftConfig;
+using Microsoft.UI.Xaml.Controls;
+using MinecraftLaunch.Extensions;
 using static Uno.UI.RemoteControl.HotReload.ClientHotReloadProcessor;
 
-namespace BadMC_Launcher.Services.FileManager;
-public class FileService : IFileService {
+namespace BadMC_Launcher.Services;
+public class FileService {
     public bool CheckFolderAndFile(string path, bool isCheckFile) {
         if (isCheckFile ? File.Exists(path) : Path.Exists(path)) {
             return true;
@@ -82,26 +87,14 @@ public class FileService : IFileService {
     //    return false;
     //}
 
-    public bool ReadConfig<T>(string path, T? inputClass, out T? returnValue) {
+    public bool ReadConfig<T>(string path, JsonTypeInfo<T> jsonTypeInfo, out T? returnValue) {
         if (CheckFolderAndFile(path, true)) {
             try {
                 var fileValue = File.ReadAllText(path);
-                if (!String.IsNullOrWhiteSpace(fileValue)) {
-                    using (JsonDocument document = JsonDocument.Parse(fileValue)) {
-                        JsonElement root = document.RootElement;
-                        var status = false;
-                        foreach (JsonProperty property in root.EnumerateObject()) {
-                            //TODO: 这放个throw不合适哈，到时候改成DialogEx（
-                            PropertyInfo propInfo = typeof(T).GetProperty(property.Name) ?? throw new ArgumentException($"Property '{property.Name}' not found.");
-                            propInfo.SetValue(inputClass, JsonSerializer.Deserialize(property.Value.GetRawText(), propInfo.PropertyType));
-                        }
-                        if (inputClass != null) {
-                            returnValue = inputClass;
-                            status = inputClass != null;
-                            return true;
-                        }
-                    }
-                    
+                if (!string.IsNullOrWhiteSpace(fileValue)) {
+
+                    returnValue = fileValue.Deserialize(jsonTypeInfo);
+                    return true;
                 }
             }
             catch (Exception ex) {
@@ -130,14 +123,14 @@ public class FileService : IFileService {
         return false;
     }
 
-    public bool ReadConfig(string path, out JsonDocument? returnValue) {
+    public bool ReadConfig(string path, out JsonElement? returnValue) {
         if (CheckFolderAndFile(path, true)) {
             try {
                 var fileValue = File.ReadAllText(path);
-                if (!String.IsNullOrWhiteSpace(fileValue)) {
+                if (!string.IsNullOrWhiteSpace(fileValue)) {
                     var jsonValue = JsonDocument.Parse(fileValue);
                     if (jsonValue != null) {
-                        returnValue = jsonValue;
+                        returnValue = jsonValue.RootElement;
                         return true;
                     }
                 }
@@ -169,14 +162,10 @@ public class FileService : IFileService {
         return false;
     }
 
-    public bool WriteConfig<T>(string path, T value) {
+    public bool WriteConfig<T>(string path, T value, JsonTypeInfo<T> jsonTypeInfo) {
         if (CheckFolderAndFile(path, true)) {
             try {
-                var options = new JsonSerializerOptions {
-                    Encoder = JavaScriptEncoder.UnsafeRelaxedJsonEscaping,
-                    WriteIndented = true
-                };
-                var jsonValue = JsonSerializer.Serialize<T>(value, options);
+                var jsonValue = value.Serialize(jsonTypeInfo);
                 File.WriteAllText(path, jsonValue);
                 return true;
             }

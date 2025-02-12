@@ -118,12 +118,21 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <data name="ApplicationName" xml:space="preserve">
-    <value>BadMC_Launcher</value>
+    <value>BadMC Launcher</value>
+  </data>
+  <data name="MinecraftTitleName" xml:space="preserve">
+    <value>BadMC Launcher - Let's MINECRAFT!</value>
+  </data>
+  <data name="DashboardLaunchButtonTagDefault" xml:space="preserve">
+    <value>No ontology selected_( ﾟДﾟ)ﾉ</value>
   </data>
   <data name="DashboardLaunchButtonName.Text" xml:space="preserve">
     <value>Launch Minecraft!</value>
   </data>
-  <data name="DashboardLaunchButtonTagDefault" xml:space="preserve">
-    <value>No ontology selected_( ﾟДﾟ)ﾉ</value>
+  <data name="MinecraftListRefresh.Text" xml:space="preserve">
+    <value>Refresh</value>
+  </data>
+  <data name="MinecraftListsManager.Text" xml:space="preserve">
+    <value>Manage .minecraft folders</value>
   </data>
 </root>

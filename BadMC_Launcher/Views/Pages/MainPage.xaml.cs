@@ -1,3 +1,4 @@
+using BadMC_Launcher.Services.Settings.MinecraftConfig;
 using BadMC_Launcher.ViewModels.Pages;
 
 namespace BadMC_Launcher.Views.Pages;
@@ -9,10 +10,6 @@ public sealed partial class MainPage : Page {
         this.InitializeComponent();
         DataContext = viewModel;
         viewModel.SetInitialPage(MainFrame);
-        SetBackground();
         viewModel.SetBackground((brush) => MainGrid.Background = brush);
-    }
-    private async void SetBackground() {
-        
     }
 }
