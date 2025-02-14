@@ -51,6 +51,7 @@
     <TrimmerRootAssembly Include="BadMC_Launcher" />
   </ItemGroup>
   <ItemGroup>
+    <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.MetadataControl" />
     <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
     <PackageReference Include="MinecraftLaunch" />
@@ -74,6 +75,7 @@
   </ItemGroup>
   <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows10.0.26100'">
     <PackageReference Include="CommunityToolkit.WinUI.Lottie" />
+    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" />
   </ItemGroup>
   <ItemGroup>
     <Page Update="Views\Styles\ItemTemplate\MinecraftPathItemsTemplate.xaml">

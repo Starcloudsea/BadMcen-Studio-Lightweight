@@ -9,60 +9,58 @@ using System.Threading.Tasks;
 using BadMC_Launcher.Models.Interface;
 using BadMC_Launcher.Utilities;
 using CommunityToolkit.Mvvm.DependencyInjection;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Xaml.Media.Imaging;
+using BadMC_Launcher.Models.Datas.MinecraftDatas;
 
-namespace BadMC_Launcher.Services.Settings.ThemeSetting;
+namespace BadMC_Launcher.Services.Settings;
 public class ThemeSettingService : IConfigClass {
-    private BackgroundTypeEnum backgroundType = BackgroundTypeEnum.StaticImage;
-    private ThemeTypeEnum themeType = ThemeTypeEnum.Light;
-    private string imageBackgroundName = "WALLPAPER.PNG";
-    private Stretch backgroundStretch = Stretch.UniformToFill;
-    private string solidColorBackgroundCode = "#FFFFFFFF";
-    private string windowName = "BadMC Launcher";
+    internal bool isSyncEnabled = false;
 
     public BackgroundTypeEnum BackgroundType {
-        get => backgroundType;
+        get => ThemeSetting.backgroundType;
         set {
-            backgroundType = value;
+            ThemeSetting.backgroundType = value;
             SetBackground();
         }
     }
 
     public ThemeTypeEnum ThemeType { 
-        get => themeType;
+        get => ThemeSetting.themeType;
         set {
-            themeType = value;
+            ThemeSetting.themeType = value;
         }
     }
 
     public string ImageBackgroundName {
-        get => imageBackgroundName;
+        get => ThemeSetting.imageBackgroundName;
         set {
-            imageBackgroundName = value;
+            ThemeSetting.imageBackgroundName = value;
             SetBackground();
         }
     }
 
     public Stretch BackgroundStretch {
-        get => backgroundStretch;
+        get => ThemeSetting.backgroundStretch;
         set {
-            backgroundStretch = value;
+            ThemeSetting.backgroundStretch = value;
             SetBackground();
         }
     }
 
     public string SolidColorBackgroundCode {
-        get => solidColorBackgroundCode;
+        get => ThemeSetting.solidColorBackgroundCode;
         set {
-            solidColorBackgroundCode = value;
+            ThemeSetting.solidColorBackgroundCode = value;
             SetBackground();
         }
     }
 
     public string WindowName {
-        get => windowName;
+        get => ThemeSetting.windowName;
         set {
-            windowName = value;
+            ThemeSetting.windowName = value;
             if (!SyncSettingSet()) {
                 //TODO: Exception Dialog
             }
@@ -80,17 +78,17 @@ public class ThemeSettingService : IConfigClass {
             return;
         }
         App.GetService<FileService>().CheckFolderAndFile(Path.Combine(AppDataPath.AssetsPath, "Wallpapers"), false);
-        switch (backgroundType) {
+        switch (ThemeSetting.backgroundType) {
             case BackgroundTypeEnum.SolidColor:
-                var color = ColorTranslator.FromHtml(solidColorBackgroundCode);
+                var color = ColorTranslator.FromHtml(ThemeSetting.solidColorBackgroundCode);
                     SetBrushAsync(Windows.UI.Color.FromArgb(color.A, color.R, color.G, color.B), backgroundChanged);
                 break;
             case BackgroundTypeEnum.StaticImage:
-                if (string.IsNullOrWhiteSpace(imageBackgroundName)) {
+                if (string.IsNullOrWhiteSpace(ThemeSetting.imageBackgroundName)) {
                     //TODO :Dialog EXCEPTION
                     return;
                 }
-                SetBrushAsync(new BitmapImage(new Uri(Path.Combine(AppDataPath.AssetsPath, "Wallpapers", imageBackgroundName))), backgroundChanged);
+                SetBrushAsync(new BitmapImage(new Uri(Path.Combine(AppDataPath.AssetsPath, "Wallpapers", ThemeSetting.imageBackgroundName))), backgroundChanged);
                 break;
             case BackgroundTypeEnum.BingWallpaper:
                 SetBrushAsync(new BitmapImage(new Uri(await GetWallpaper.GetBingWallpaperUrl())), backgroundChanged);
@@ -103,19 +101,23 @@ public class ThemeSettingService : IConfigClass {
 
     public bool SyncSettingGet() {
         if (App.GetService<FileService>().ReadConfig(Path.Combine(AppDataPath.ConfigsPath, @"Settings\ThemeSettings.json"), ThemeSettingServiceContext.Default.ThemeSettingService, out var jsonClass) && jsonClass != null) {
-            backgroundType = jsonClass.BackgroundType;
-            themeType = jsonClass.ThemeType;
-            imageBackgroundName = jsonClass.ImageBackgroundName;
-            backgroundStretch = jsonClass.BackgroundStretch;
-            solidColorBackgroundCode = jsonClass.SolidColorBackgroundCode;
-            windowName = jsonClass.WindowName;
+            ThemeSetting.backgroundType = jsonClass.BackgroundType;
+            ThemeSetting.themeType = jsonClass.ThemeType;
+            ThemeSetting.imageBackgroundName = jsonClass.ImageBackgroundName;
+            ThemeSetting.backgroundStretch = jsonClass.BackgroundStretch;
+            ThemeSetting.solidColorBackgroundCode = jsonClass.SolidColorBackgroundCode;
+            ThemeSetting.windowName = jsonClass.WindowName;
             return true;
         }
         return false;
     }
 
     public bool SyncSettingSet() {
-        return App.GetService<FileService>().WriteConfig<ThemeSettingService>(Path.Combine(AppDataPath.ConfigsPath, @"Settings\ThemeSettings.json"), this, ThemeSettingServiceContext.Default.ThemeSettingService);
+        if (App.GetService<FileService>().WriteConfig(Path.Combine(AppDataPath.ConfigsPath, @"Settings\ThemeSettings.json"), this, ThemeSettingServiceContext.Default.ThemeSettingService)) {
+            WeakReferenceMessenger.Default.Send(new ValueChangedMessage<ThemeSettingService>(this), "MinecraftConfigChanged");
+            return true;
+        }
+        return false;
     }
     public void SetBrushAsync<T>(T color, Action<Brush> backgroundChanged) {
         if (typeof(T) == typeof(Windows.UI.Color) && color != null) {
@@ -125,7 +127,7 @@ public class ThemeSettingService : IConfigClass {
         if (typeof(T) == typeof(BitmapImage) && color != null) {
             backgroundChanged(new ImageBrush() {
                 ImageSource = (BitmapImage)(object)color,
-                Stretch = backgroundStretch
+                Stretch = ThemeSetting.backgroundStretch
             });
             return;
         }

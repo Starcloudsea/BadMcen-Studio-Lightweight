@@ -1,4 +1,4 @@
-using BadMC_Launcher.Services.Settings.MinecraftConfig;
+using BadMC_Launcher.Services.Settings;
 using BadMC_Launcher.ViewModels.Pages;
 
 namespace BadMC_Launcher.Views.Pages;

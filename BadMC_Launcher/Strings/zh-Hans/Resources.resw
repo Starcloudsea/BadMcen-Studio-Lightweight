@@ -135,4 +135,13 @@
   <data name="MinecraftListsManager.Text" xml:space="preserve">
     <value>管理 .minecraft 文件夹</value>
   </data>
+  <data name="ViewLocalMinecraftFolder.Text" xml:space="preserve">
+    <value>浏览 .minecraft 文件夹</value>
+  </data>
+  <data name="MinecraftEmptyListTipsText.Text" xml:space="preserve">
+    <value>找不到任何本体.</value>
+  </data>
+  <data name="MinecraftEmptyListTipsHyperLinkButton.Text" xml:space="preserve">
+    <value>转到本体页面以管理Minecraft本体.</value>
+  </data>
 </root>

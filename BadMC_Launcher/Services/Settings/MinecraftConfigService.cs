@@ -16,67 +16,51 @@ using Microsoft.Windows.ApplicationModel.Resources;
 using BadMC_Launcher.Models.Interface;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using CommunityToolkit.Mvvm.Messaging;
+using NbtToolkit;
+using System.Xml.Linq;
+using BadMC_Launcher.Models.Datas.MinecraftDatas;
+using System.ComponentModel;
 
-namespace BadMC_Launcher.Services.Settings.MinecraftConfig;
+namespace BadMC_Launcher.Services.Settings;
 public class MinecraftConfigService : IConfigClass {
-    private IEnumerable<Account> minecraftAccounts = new JsonList<Account>();
-    private IEnumerable<string> javaPaths = new JsonList<string>();
-    private IEnumerable<MinecraftPathEntry> minecraftPaths = new JsonList<MinecraftPathEntry>();
-    private MinecraftEntry? activeMinecraftEntry;
-    private JavaEntry? activeJavaPath;
-    private MinecraftPathEntry? activeMinecraftPath;
-    private Account? activeMinecraftAccount;
-    private bool isFullscreen = false;
-    private bool isEnableIndependencyCore = false;
-    private int minMemorySize = 512;
-    private int maxMemorySize = 1024;
-    private string? launcherName = App.GetService<ResourceLoader>().GetString("MinecraftTitleName");
-    private IEnumerable<string>? jvmArguments;
+    internal bool isSyncEnabled = false;
 
     public MinecraftConfigService() {
-        if (minecraftAccounts is JsonList<Account> minecraftAccountsJsonList
-            && javaPaths is JsonList<string> javaPathsJsonList
-            && minecraftPaths is JsonList<MinecraftPathEntry> minecraftPathsJsonList) {
+        if (MinecraftConfig.minecraftAccounts is JsonList<Account> minecraftAccountsJsonList
+            && MinecraftConfig.javaPaths is JsonList<string> javaPathsJsonList
+            && MinecraftConfig.minecraftPaths is JsonList<MinecraftPathEntry> minecraftPathsJsonList) {
 
             //Triggers an event when a property is changed
-            minecraftAccountsJsonList.CollectionChanged += OnCollectionChanged<Account>;
-            javaPathsJsonList.CollectionChanged += OnCollectionChanged<string>;
-            minecraftPathsJsonList.CollectionChanged += OnCollectionChanged<MinecraftPathEntry>;
+            minecraftAccountsJsonList.CollectionChanged += OnCollectionChanged;
+            javaPathsJsonList.CollectionChanged += OnCollectionChanged;
+            minecraftPathsJsonList.CollectionChanged += OnCollectionChanged;
         }
     }
 
     public IEnumerable<Account> MinecraftAccounts {
-        get => minecraftAccounts;
+        get => MinecraftConfig.minecraftAccounts;
         set {
-            minecraftAccounts = value;
+            MinecraftConfig.minecraftAccounts = value;
 
             //Write to Json
             SyncSettingSet();
         }
     }
     public IEnumerable<string> JavaPaths {
-        get => javaPaths;
+        get => MinecraftConfig.javaPaths;
         set {
-            javaPaths = value;
+            MinecraftConfig.javaPaths = value;
 
             //Write to Json
             SyncSettingSet();
         }
     }
     public IEnumerable<MinecraftPathEntry> MinecraftPaths {
-        get => minecraftPaths;
+        get => MinecraftConfig.minecraftPaths;
         set {
-            minecraftPaths = value;
-
-            //Write to Json
-            SyncSettingSet();
-        }
-    }
-
-    public MinecraftEntry? ActiveMinecraftEntry {
-        get => activeMinecraftEntry;
-        set {
-            activeMinecraftEntry = value;
+            MinecraftConfig.minecraftPaths = value;
 
             //Write to Json
             SyncSettingSet();
@@ -84,19 +68,19 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public JavaEntry? ActiveJavaPath {
-        get => activeJavaPath;
+        get => MinecraftConfig.activeJavaPath;
         set {
-            activeJavaPath = value;
+            MinecraftConfig.activeJavaPath = value;
 
             //Write to Json
             SyncSettingSet();
         }
     }
 
-    public MinecraftPathEntry? ActiveMinecraftPath {
-        get => activeMinecraftPath;
+    public string? ActiveMinecraftPath {
+        get => MinecraftConfig.activeMinecraftPath;
         set {
-            activeMinecraftPath = value;
+            MinecraftConfig.activeMinecraftPath = value;
 
             //Write to Json
             SyncSettingSet();
@@ -104,9 +88,9 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public Account? ActiveMinecraftAccount {
-        get => activeMinecraftAccount;
+        get => MinecraftConfig.activeMinecraftAccount;
         set {
-            activeMinecraftAccount = value;
+            MinecraftConfig.activeMinecraftAccount = value;
 
             //Write to Json
             SyncSettingSet();
@@ -114,9 +98,9 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public bool IsFullscreen {
-        get => isFullscreen;
+        get => MinecraftConfig.isFullscreen;
         set {
-            isFullscreen = value;
+            MinecraftConfig.isFullscreen = value;
 
             //Write to Json
             SyncSettingSet();
@@ -124,9 +108,9 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public bool IsEnableIndependencyCore {
-        get => isEnableIndependencyCore;
+        get => MinecraftConfig.isEnableIndependencyCore;
         set {
-            isEnableIndependencyCore = value;
+            MinecraftConfig.isEnableIndependencyCore = value;
 
             //Write to Json
             SyncSettingSet();
@@ -134,9 +118,9 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public int MinMemorySize {
-        get => minMemorySize;
+        get => MinecraftConfig.minMemorySize;
         set {
-            minMemorySize = value;
+            MinecraftConfig.minMemorySize = value;
 
             //Write to Json
             SyncSettingSet();
@@ -144,9 +128,9 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public int MaxMemorySize {
-        get => maxMemorySize;
+        get => MinecraftConfig.maxMemorySize;
         set {
-            maxMemorySize = value;
+            MinecraftConfig.maxMemorySize = value;
 
             //Write to Json
             SyncSettingSet();
@@ -154,9 +138,9 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public string? LauncherName {
-        get => launcherName;
+        get => MinecraftConfig.launcherName;
         set {
-            launcherName = value;
+            MinecraftConfig.launcherName = value;
 
             //Write to Json
             SyncSettingSet();
@@ -164,18 +148,18 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public IEnumerable<string>? JvmArguments {
-        get => jvmArguments;
+        get => MinecraftConfig.jvmArguments;
         set {
-            jvmArguments = value;
+            MinecraftConfig.jvmArguments = value;
 
             //Write to Json
             SyncSettingSet();
         }
     }
 
-    private void OnCollectionChanged<T>(object? sender, NotifyCollectionChangedEventArgs e) {
+    private void OnCollectionChanged(object? sender, NotifyCollectionChangedEventArgs e) {
 
-        if (SyncSettingSet()) {
+        if (!SyncSettingSet()) {
             //TODO: Dialog
         }
     }
@@ -183,28 +167,37 @@ public class MinecraftConfigService : IConfigClass {
     public bool SyncSettingGet() {
         if (App.GetService<FileService>().ReadConfig<MinecraftConfigService>(Path.Combine(AppDataPath.ConfigsPath, "MinecraftConfigs.json"), MinecraftConfigServiceContext.Default.MinecraftConfigService, out var jsonClass) && jsonClass != null) {
             //TODO: 解蜜
-            minecraftAccounts = jsonClass.MinecraftAccounts;
-            javaPaths = jsonClass.JavaPaths;
-            minecraftPaths = jsonClass.MinecraftPaths;
-            activeMinecraftEntry = jsonClass.ActiveMinecraftEntry;
-            activeJavaPath = jsonClass.ActiveJavaPath;
-            activeMinecraftPath = jsonClass.ActiveMinecraftPath;
-            activeMinecraftAccount = jsonClass.ActiveMinecraftAccount;
-            isFullscreen = jsonClass.IsFullscreen;
-            isEnableIndependencyCore = jsonClass.IsEnableIndependencyCore;
-            minMemorySize = jsonClass.MinMemorySize;
-            maxMemorySize = jsonClass.MaxMemorySize;
-            launcherName = jsonClass.LauncherName;
-            jvmArguments = jsonClass.JvmArguments;
+            MinecraftConfig.minecraftAccounts = jsonClass.MinecraftAccounts;
+            MinecraftConfig.javaPaths = jsonClass.JavaPaths;
+            MinecraftConfig.minecraftPaths = jsonClass.MinecraftPaths;
+            MinecraftConfig.activeJavaPath = jsonClass.ActiveJavaPath;
+            MinecraftConfig.activeMinecraftPath = jsonClass.ActiveMinecraftPath;
+            MinecraftConfig.activeMinecraftAccount = jsonClass.ActiveMinecraftAccount;
+            MinecraftConfig.isFullscreen = jsonClass.IsFullscreen;
+            MinecraftConfig.isEnableIndependencyCore = jsonClass.IsEnableIndependencyCore;
+            MinecraftConfig.minMemorySize = jsonClass.MinMemorySize;
+            MinecraftConfig.maxMemorySize = jsonClass.MaxMemorySize;
+            MinecraftConfig.launcherName = jsonClass.LauncherName;
+            MinecraftConfig.jvmArguments = jsonClass.JvmArguments;
             return true;
         }
         return false;
     }
 
+    private void PropertyChanged(object? sender, PropertyChangedEventArgs e) {
+        if (!SyncSettingSet()) {
+            //TODO: Dialog
+        }
+    }
+
     public bool SyncSettingSet() {
+        if (isSyncEnabled == false) {
+            return false;
+        }
         MinecraftConfigService classValue = this;
         //TODO: 加蜜
-        return App.GetService<FileService>().WriteConfig<MinecraftConfigService>(Path.Combine(AppDataPath.ConfigsPath, "MinecraftConfigs.json"), classValue, MinecraftConfigServiceContext.Default.MinecraftConfigService);
+        return App.GetService<FileService>().WriteConfig(Path.Combine(AppDataPath.ConfigsPath, "MinecraftConfigs.json"), classValue, MinecraftConfigServiceContext.Default.MinecraftConfigService);
+            
     }
 }
 

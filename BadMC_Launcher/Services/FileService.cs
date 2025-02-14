@@ -4,10 +4,8 @@ using System.Text.Encodings.Web;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
-using BadMC_Launcher.Services.Settings.MinecraftConfig;
 using Microsoft.UI.Xaml.Controls;
 using MinecraftLaunch.Extensions;
-using static Uno.UI.RemoteControl.HotReload.ClientHotReloadProcessor;
 
 namespace BadMC_Launcher.Services;
 public class FileService {

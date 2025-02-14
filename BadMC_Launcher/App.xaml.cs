@@ -1,7 +1,5 @@
 using BadMC_Launcher.Services;
-using BadMC_Launcher.Services.Settings.MinecraftConfig;
-using BadMC_Launcher.Services.Settings.SingleMinecraftConfig;
-using BadMC_Launcher.Services.Settings.ThemeSetting;
+using BadMC_Launcher.Services.Settings;
 using BadMC_Launcher.ViewModels.Pages;
 using BadMC_Launcher.Views.Pages;
 using Microsoft.Extensions.DependencyInjection.Extensions;
@@ -42,7 +40,7 @@ public partial class App : Application {
                                 LogLevel.Warning)
 
                         // Default filters for core Uno Platform namespaces
-                        .CoreLogLevel(LogLevel.Debug);
+                        .CoreLogLevel(LogLevel.Information);
 
                     // Uno Platform namespace filter groups
                     // Uncomment individual methods to see more detailed logging
@@ -57,14 +55,14 @@ public partial class App : Application {
                     //// Binder memory references tracking
                     //logBuilder.BinderMemoryReferenceLogLevel(LogLevel.Debug);
                     //// DevServer and HotReload related
-                    logBuilder.HotReloadCoreLogLevel(LogLevel.Debug);
+                    //logBuilder.HotReloadCoreLogLevel(LogLevel.Debug);
                     //// Debug JS interop
                     //logBuilder.WebAssemblyLogLevel(LogLevel.Debug);
 
                 }, enableUnoLogging: true)
                 .UseSerilog(consoleLoggingEnabled: true, fileLoggingEnabled: true, (configuration) => {
                     configuration
-                        .MinimumLevel.Debug()
+                        .MinimumLevel.Error()
                         .WriteTo.Console()
                         .WriteTo.File(
                             path: Path.Combine(AppDataPath.LogsPath, "AppLog.log"), // 更改日志文件的存储位置
@@ -90,7 +88,9 @@ public partial class App : Application {
         MainWindow = builder.Window;
         Host = builder.Build();
 
-        
+        //Get Configs
+        GetSettings();
+
         MainWindow.AppWindow.Title = GetService<ThemeSettingService>().WindowName;
         MainWindow.AppWindow.Resize(AppParameters.windowSize);
         MainWindow.AppWindow.TitleBar.ExtendsContentIntoTitleBar = true;
@@ -123,9 +123,6 @@ public partial class App : Application {
             rootFrame.Navigate(typeof(MainPage), args.Arguments);
         }
 
-        //Get Configs
-        GetSetting();
-
         // Ensure the current window is active
         MainWindow.Activate();
         
@@ -143,8 +140,10 @@ public partial class App : Application {
         throw new InvalidOperationException("Service not found.");
     }
 
-    private void GetSetting() {
+    private void GetSettings() {
         GetService<MinecraftConfigService>().SyncSettingGet();
+        GetService<MinecraftConfigService>().isSyncEnabled = true;
         GetService<ThemeSettingService>().SyncSettingGet();
+        GetService<ThemeSettingService>().isSyncEnabled = true;
     }
 }

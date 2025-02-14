@@ -135,4 +135,13 @@
   <data name="MinecraftListsManager.Text" xml:space="preserve">
     <value>Manage .minecraft folders</value>
   </data>
+  <data name="ViewLocalMinecraftFolder.Text" xml:space="preserve">
+    <value>Browse .minecraft folder</value>
+  </data>
+  <data name="MinecraftEmptyListTipsText.Text" xml:space="preserve">
+    <value>Can't find any ontology.</value>
+  </data>
+  <data name="MinecraftEmptyListTipsHyperLinkButton.Text" xml:space="preserve">
+    <value>Go to the Ontology page to manage Minecraft ontologies.</value>
+  </data>
 </root>

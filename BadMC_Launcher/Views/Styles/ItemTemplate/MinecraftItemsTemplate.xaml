@@ -1,6 +1,7 @@
 ﻿<ResourceDictionary
     xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
     xmlns:controls="using:CommunityToolkit.WinUI.Controls">
     <DataTemplate x:Key="MinecraftItemsTemplateSecondary">
         <Grid>
@@ -9,8 +10,9 @@
                 <RowDefinition Height="*"/>
             </Grid.RowDefinitions>
             <Grid.ColumnDefinitions>
-                <ColumnDefinition Width="Auto"/>
+                <ColumnDefinition Width="52"/>
                 <ColumnDefinition Width="*"/>
+                <ColumnDefinition Width="48"/>
             </Grid.ColumnDefinitions>
             <Border Grid.RowSpan="2"
                     Grid.Column="0"
@@ -23,22 +25,37 @@
                     BorderThickness="4"
                     BorderBrush="{ThemeResource CardStrokeColorDefaultBrush}">
                 <Border.Background>
-                    <ImageBrush ImageSource="{Binding MinecraftImagePath}" Stretch="UniformToFill"/>
+                    <ImageBrush ImageSource="{Binding MinecraftImage}" Stretch="UniformToFill"/>
                 </Border.Background>
             </Border>
             <TextBlock Grid.Column="1"
                        Grid.Row="0"
                        Text="{Binding MinecraftName}"
                        Style="{ThemeResource SubtitleTextBlockStyle}"
-                       Margin="12, 6, 0, 0"
+                       Margin="6, 6, 0, 0"
                        Height="30"
                        TextTrimming="CharacterEllipsis"/>
             <controls:MetadataControl Grid.Column="1"
                                       Grid.Row="1"
                                       Items="{Binding MinecraftTags}"
-                                      Style="{ThemeResource BodyStrongTextBlockStyle}"
-                                      Margin="12, 0, 6, 0"/>
-        </Grid>
+                                      Margin="6, 0, 6, 0"/>
+            <FontIcon Glyph="&#xE735;"
+                      Foreground="{ThemeResource AccentFillColorDefaultBrush}"
+                      Grid.RowSpan="2"
+                      Grid.Column="2"
+                      x:Name="StarredIcon"
+                      HorizontalAlignment="Center"
+                      VerticalAlignment="Center">
+            </FontIcon>
+            <Interactivity:Interaction.Behaviors>
+                <Interactivity:DataTriggerBehavior Binding="{Binding IsStarred}" Value="True">
+                    <Interactivity:ChangePropertyAction PropertyName="Opacity" Value="1" TargetObject="{Binding ElementName=StarredIcon}" />
+                </Interactivity:DataTriggerBehavior>
+                <Interactivity:DataTriggerBehavior Binding="{Binding IsStarred}" Value="False">
+                    <Interactivity:ChangePropertyAction PropertyName="Opacity" Value="0" TargetObject="{Binding ElementName=StarredIcon}" />
+                </Interactivity:DataTriggerBehavior>
+            </Interactivity:Interaction.Behaviors>
 
+        </Grid>
     </DataTemplate>
 </ResourceDictionary>

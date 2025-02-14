@@ -1,7 +1,5 @@
-using BadMC_Launcher.Services;
-using BadMC_Launcher.Services.Settings.ThemeSetting;
+using BadMC_Launcher.Services.Settings;
 using BadMC_Launcher.Views.Pages;
-using Microsoft.UI.Xaml.Media;
 
 namespace BadMC_Launcher.ViewModels.Pages;
 
