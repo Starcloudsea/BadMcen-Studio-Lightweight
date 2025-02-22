@@ -22,9 +22,6 @@
     </None>
   </ItemGroup>
   <ItemGroup>
-    <Page Update="Views\Pages\DashboardPage.xaml">
-      <SubType>Designer</SubType>
-    </Page>
     <Page Update="Views\Styles\ItemTemplate\MinecraftItemsTemplate.xaml">
       <SubType>Designer</SubType>
     </Page>
@@ -32,6 +29,9 @@
       <SubType>Designer</SubType>
     </Page>
     <Page Update="Views\Styles\TransparentButton.xaml">
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Update="Views\UserControls\LaunchPad.xaml">
       <SubType>Designer</SubType>
     </Page>
   </ItemGroup>

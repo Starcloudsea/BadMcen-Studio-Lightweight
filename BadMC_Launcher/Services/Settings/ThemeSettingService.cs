@@ -5,16 +5,15 @@ using System.Linq;
 using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
-using System.Threading.Tasks;
-using BadMC_Launcher.Models.Interface;
+using BadMC_Launcher.Interfaces;
 using BadMC_Launcher.Utilities;
 using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Xaml.Media.Imaging;
-using BadMC_Launcher.Models.Datas.MinecraftDatas;
+using BadMC_Launcher.Models.Datas.SettingsDatas;
 
-namespace BadMC_Launcher.Services.Settings;
+namespace BadMC_Launcher.Servicess.Settings;
 public class ThemeSettingService : IConfigClass {
     internal bool isSyncEnabled = false;
 
@@ -81,17 +80,17 @@ public class ThemeSettingService : IConfigClass {
         switch (ThemeSetting.backgroundType) {
             case BackgroundTypeEnum.SolidColor:
                 var color = ColorTranslator.FromHtml(ThemeSetting.solidColorBackgroundCode);
-                    SetBrushAsync(Windows.UI.Color.FromArgb(color.A, color.R, color.G, color.B), backgroundChanged);
+                    SetBrush(Windows.UI.Color.FromArgb(color.A, color.R, color.G, color.B), backgroundChanged);
                 break;
             case BackgroundTypeEnum.StaticImage:
                 if (string.IsNullOrWhiteSpace(ThemeSetting.imageBackgroundName)) {
                     //TODO :Dialog EXCEPTION
                     return;
                 }
-                SetBrushAsync(new BitmapImage(new Uri(Path.Combine(AppDataPath.AssetsPath, "Wallpapers", ThemeSetting.imageBackgroundName))), backgroundChanged);
+                SetBrush(new BitmapImage(new Uri(Path.Combine(AppDataPath.AssetsPath, "Wallpapers", ThemeSetting.imageBackgroundName))), backgroundChanged);
                 break;
             case BackgroundTypeEnum.BingWallpaper:
-                SetBrushAsync(new BitmapImage(new Uri(await GetWallpaper.GetBingWallpaperUrl())), backgroundChanged);
+                SetBrush(new BitmapImage(new Uri(await GetWallpaper.GetBingWallpaperUrl())), backgroundChanged);
                 break;
             case BackgroundTypeEnum.Acrylic:
                 //TODO: Only MacOS
@@ -119,7 +118,7 @@ public class ThemeSettingService : IConfigClass {
         }
         return false;
     }
-    public void SetBrushAsync<T>(T color, Action<Brush> backgroundChanged) {
+    public void SetBrush<T>(T color, Action<Brush> backgroundChanged) {
         if (typeof(T) == typeof(Windows.UI.Color) && color != null) {
             backgroundChanged(new SolidColorBrush((Windows.UI.Color)(object)color));
             return;

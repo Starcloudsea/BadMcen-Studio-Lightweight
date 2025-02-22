@@ -5,9 +5,10 @@ using System.Linq;
 using System.Text;
 using System.Text.Json.Serialization;
 using System.Threading.Tasks;
-using BadMC_Launcher.Services.Settings;
+using BadMC_Launcher.Extensions;
+using BadMC_Launcher.Servicess.Settings;
 
-namespace BadMC_Launcher.Models.Classes.MinecraftClass;
+namespace BadMC_Launcher.Classes;
 public record MinecraftPathEntry() {
     private string minecraftName = string.Empty;
     private string? activeMinecraftEntryId;

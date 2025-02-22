@@ -4,9 +4,9 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BadMC_Launcher.Services;
-public class FrameNavigationService {
-    public void NavigateTo<T>(Frame frame) where T : Page {
+namespace BadMC_Launcher.Extensions;
+public static class FrameExtensions {
+    public static void NavigateTo<T>(this Frame frame) where T : Page {
         if (frame == null) {
             throw new InvalidOperationException("Frame is not set.");
         }

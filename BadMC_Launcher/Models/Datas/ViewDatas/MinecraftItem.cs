@@ -6,7 +6,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BadMC_Launcher.Extensions;
-using BadMC_Launcher.Models.Classes.MinecraftClass;
+using BadMC_Launcher.Classes;
 using CommunityToolkit.WinUI.Controls;
 using Microsoft.CodeAnalysis;
 using Microsoft.UI.Xaml.Media.Imaging;

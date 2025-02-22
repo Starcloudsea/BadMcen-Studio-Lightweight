@@ -7,7 +7,7 @@ using System.Text.Json.Serialization.Metadata;
 using Microsoft.UI.Xaml.Controls;
 using MinecraftLaunch.Extensions;
 
-namespace BadMC_Launcher.Services;
+namespace BadMC_Launcher.Servicess;
 public class FileService {
     public bool CheckFolderAndFile(string path, bool isCheckFile) {
         if (isCheckFile ? File.Exists(path) : Path.Exists(path)) {

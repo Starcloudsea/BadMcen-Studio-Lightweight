@@ -1,92 +1,139 @@
 <Project Sdk="Uno.Sdk">
-  <PropertyGroup>
-    <TargetFrameworks>net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0-desktop;net9.0</TargetFrameworks>
-    <LangVersion>preview</LangVersion>
+    <PropertyGroup>
+        <TargetFrameworks>net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0-desktop;net9.0</TargetFrameworks>
+        <LangVersion>preview</LangVersion>
+        
+        <OutputType>Exe</OutputType>
+        <UnoSingleProject>true</UnoSingleProject>
+        
+        <!-- Display name -->
+        <ApplicationTitle>BadMC_Launcher</ApplicationTitle>
 
-    <OutputType>Exe</OutputType>
-    <UnoSingleProject>true</UnoSingleProject>
+        <!-- Application Icon -->
+        <UnoIconForegroundFile>Assets\Icons\appicon_foreground.png</UnoIconForegroundFile>
+        <UnoIconBackgroundFile>Assets\Icons\appicon_background.png</UnoIconBackgroundFile>
+        <!-- TODO: 等着吧，估计在Bug解决之前这个属性用不了了（悲） -->
+        <UnoIconForegroundScale>0.6</UnoIconForegroundScale>
+        
+        <!-- App Identifier -->
+        <ApplicationId>org.BadBC.BadMC_Launcher</ApplicationId>
+        
+        <!-- Versions -->
+        <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
+        <ApplicationVersion>1</ApplicationVersion>
+        
+        <!-- Package Publisher -->
+        <ApplicationPublisher>Starcloudsea</ApplicationPublisher>
+        
+        <!-- Package Description -->
+        <Description>BadMC_Launcher powered by Uno Platform.</Description>
+        
+        <!-- Native AOT Support -->
+        <!-- TODO: 在Mvvm支持AOT之前就憋想取消这个的注释了吧（悲） -->
+        <!--<PublishAot>true</PublishAot>-->
+        
+        <!--
+          If you encounter this error message:
+        
+            error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
+            Please update to a newer .NET SDK in order to reference this assembly.
+        
+          This means that the two packages below must be aligned with the "build" version number of
+          the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
+          must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
+        -->
+        <!-- <WindowsSdkPackageVersion>10.0.22621.28</WindowsSdkPackageVersion> -->
+        
+        <!--
+          UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
+          https://aka.platform.uno/singleproject-features
+        -->
+        <UnoFeatures>
+            Lottie;
+            Hosting;
+            Toolkit;
+            Logging;
+            LoggingSerilog;
+            Mvvm;
+            ThemeService;
+        </UnoFeatures>
+    </PropertyGroup>
+    <ItemGroup>
+        <TrimmerRootAssembly Include="BadMC_Launcher" />
+    </ItemGroup>
+    <ItemGroup>
+          <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
+          <PackageReference Include="CommunityToolkit.WinUI.Controls.MetadataControl" />
+          <PackageReference Include="CommunityToolkit.WinUI.Controls.TokenizingTextBox" />
+          <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
+          <PackageReference Include="MinecraftLaunch" />
+          <PackageReference Include="Uno.WinUI.DevServer.Messaging" />
+    
+    </ItemGroup>
+    <ItemGroup>
+        <Page Update="Views\Pages\BlankPage1.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <Page Update="Views\Styles\TransparentButton.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <Page Update="Views\Pages\DashboardPage.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows10.0.26100'">
+        <PackageReference Include="CommunityToolkit.WinUI.Lottie" />
+        <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" />
+    </ItemGroup>
+    <ItemGroup>
+        <Page Update="Views\Styles\ItemTemplate\MinecraftPathItemsTemplate.xaml">
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+        <Page Update="Views\Styles\ItemTemplate\MinecraftItemsTemplate.xaml">
+            <SubType>Designer</SubType>
+            <Generator>MSBuild:Compile</Generator>
+        </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="Assets\Icons\appicon_background.png" />
+    </ItemGroup>
+    <ItemGroup>
+      <Content Remove="Assets\Icons\appicon_foreground.png" />
+    </ItemGroup>
 
-    <!-- Display name -->
-    <ApplicationTitle>BadMC_Launcher</ApplicationTitle>
-    <!-- App Identifier -->
-    <ApplicationId>org.BadBC.BadMC_Launcher</ApplicationId>
-    <!-- Versions -->
-    <ApplicationDisplayVersion>1.0</ApplicationDisplayVersion>
-    <ApplicationVersion>1</ApplicationVersion>
-    <!-- Package Publisher -->
-    <ApplicationPublisher>Starcloudsea</ApplicationPublisher>
-    <!-- Package Description -->
-    <Description>BadMC_Launcher powered by Uno Platform.</Description>
-    <!-- Native AOT Support -->
-      <!-- TODO: 在Mvvm支持AOT之前就憋想取消这个的注释了吧（悲） -->
-    <!--<PublishAot>true</PublishAot>-->
-
-    <!--
-      If you encounter this error message:
-
-        error NETSDK1148: A referenced assembly was compiled using a newer version of Microsoft.Windows.SDK.NET.dll.
-        Please update to a newer .NET SDK in order to reference this assembly.
-
-      This means that the two packages below must be aligned with the "build" version number of
-      the "Microsoft.Windows.SDK.BuildTools" package above, and the "revision" version number
-      must be the highest found in https://www.nuget.org/packages/Microsoft.Windows.SDK.NET.Ref.
-    -->
-    <!-- <WindowsSdkPackageVersion>10.0.22621.28</WindowsSdkPackageVersion> -->
-
-    <!--
-      UnoFeatures let's you quickly add and manage implicit package references based on the features you want to use.
-      https://aka.platform.uno/singleproject-features
-    -->
-    <UnoFeatures>
-      Lottie;
-      Hosting;
-      Toolkit;
-      Logging;
-      LoggingSerilog;
-      Mvvm;
-      ThemeService;
-    </UnoFeatures>
-  </PropertyGroup>
-  <ItemGroup>
-    <TrimmerRootAssembly Include="BadMC_Launcher" />
-  </ItemGroup>
-  <ItemGroup>
-    <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
-    <PackageReference Include="CommunityToolkit.WinUI.Controls.MetadataControl" />
-    <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
-    <PackageReference Include="MinecraftLaunch" />
-    <PackageReference Include="Uno.WinUI.DevServer.Messaging" />
-
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\Pages\BlankPage1.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\Styles\TransparentButton.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\Pages\DashboardPage.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup Condition="'$(TargetFramework)' == 'net9.0-windows10.0.26100'">
-    <PackageReference Include="CommunityToolkit.WinUI.Lottie" />
-    <PackageReference Include="Microsoft.Xaml.Behaviors.WinUI.Managed" />
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\Styles\ItemTemplate\MinecraftPathItemsTemplate.xaml">
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
-  <ItemGroup>
-    <Page Update="Views\Styles\ItemTemplate\MinecraftItemsTemplate.xaml">
-      <SubType>Designer</SubType>
-      <Generator>MSBuild:Compile</Generator>
-    </Page>
-  </ItemGroup>
+    <ItemGroup>
+      <UnoIcon Include="Assets\Icons\appicon_foreground.png">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </UnoIcon>
+    </ItemGroup>
+    <ItemGroup>
+      <UnoImage Include="Assets\Icons\appicon_background.png">
+        <CopyToOutputDirectory>Never</CopyToOutputDirectory>
+      </UnoImage>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Views\Pages\MainSideBarPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Views\UserControls\LaunchPad.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Page Update="Views\Pages\MainSideBarPages\MainMenuPage.xaml">
+        <Generator>MSBuild:Compile</Generator>
+      </Page>
+    </ItemGroup>
+    <ItemGroup>
+      <Folder Include="Views\Pages\MainSideBarPages\" />
+    </ItemGroup>
 
 </Project>

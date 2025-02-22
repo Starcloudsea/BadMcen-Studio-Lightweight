@@ -4,7 +4,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BadMC_Launcher.Models.Datas.MinecraftDatas;
+namespace BadMC_Launcher.Models.Datas.SettingsDatas;
 internal static class ThemeSetting {
     internal static BackgroundTypeEnum backgroundType = BackgroundTypeEnum.StaticImage;
 

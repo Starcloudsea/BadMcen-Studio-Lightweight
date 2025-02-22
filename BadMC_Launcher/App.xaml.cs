@@ -1,7 +1,10 @@
-using BadMC_Launcher.Services;
-using BadMC_Launcher.Services.Settings;
+using BadMC_Launcher.Classes;
+using BadMC_Launcher.Services.ViewServices;
+using BadMC_Launcher.Servicess;
+using BadMC_Launcher.Servicess.Settings;
 using BadMC_Launcher.ViewModels.Pages;
 using BadMC_Launcher.Views.Pages;
+using BadMC_Launcher.Views.Pages.MainSideBarPages;
 using Microsoft.Extensions.DependencyInjection.Extensions;
 using Microsoft.UI;
 using Microsoft.UI.Xaml.Media.Imaging;
@@ -76,13 +79,16 @@ public partial class App : Application {
                     services.AddSingleton<HttpClient>();
                     services.AddSingleton<ResourceLoader>();
 
-                    //Register custom class
+                    //Regist class
                     services.AddSingleton<ExceptionHandlingService>();
                     services.AddSingleton<FileService>();
-                    services.AddSingleton<FrameNavigationService>();
                     services.AddSingleton<MinecraftConfigService>();
                     services.AddSingleton<ThemeSettingService>();
+                    services.AddSingleton<MainSideBarManagerService>();
                     services.AddTransient<SingleMinecraftConfigService>();
+
+                    //Regist ViewModels
+                    services.AddSingleton<MainPageViewModel>();
                 })
             );
         MainWindow = builder.Window;
@@ -123,9 +129,11 @@ public partial class App : Application {
             rootFrame.Navigate(typeof(MainPage), args.Arguments);
         }
 
+        //Regist Pages
+        RegisterPages();
+
         // Ensure the current window is active
         MainWindow.Activate();
-        
     }
 
     //Get Service
@@ -145,5 +153,13 @@ public partial class App : Application {
         GetService<MinecraftConfigService>().isSyncEnabled = true;
         GetService<ThemeSettingService>().SyncSettingGet();
         GetService<ThemeSettingService>().isSyncEnabled = true;
+    }
+
+    private void RegisterPages() {
+        GetService<MainSideBarManagerService>().Register(new MainSideBarItem() {
+            ItemName = App.GetService<ResourceLoader>().GetString("MainMenu_PageNameResource"),
+            ItemIcon = new FontIcon() { Glyph = "\uE74C" },
+            NavigatePage = typeof(MainMenuPage),
+        });
     }
 }

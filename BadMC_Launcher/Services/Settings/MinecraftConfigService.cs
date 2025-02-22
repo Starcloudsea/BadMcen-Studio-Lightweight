@@ -7,23 +7,23 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using BadMC_Launcher.Models.Classes;
-using BadMC_Launcher.Models.Classes.MinecraftClass;
+using BadMC_Launcher.Classes;
 using MinecraftLaunch.Base.Models.Authentication;
 using Newtonsoft.Json.Linq;
 using MinecraftLaunch.Base.Models.Game;
 using Microsoft.Windows.ApplicationModel.Resources;
-using BadMC_Launcher.Models.Interface;
+using BadMC_Launcher.Interfaces;
 using System.Text.Json.Serialization;
 using System.Text.Json.Serialization.Metadata;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using NbtToolkit;
 using System.Xml.Linq;
-using BadMC_Launcher.Models.Datas.MinecraftDatas;
 using System.ComponentModel;
+using BadMC_Launcher.Models.Datas.SettingsDatas;
+using BadMC_Launcher.Extensions;
 
-namespace BadMC_Launcher.Services.Settings;
+namespace BadMC_Launcher.Servicess.Settings;
 public class MinecraftConfigService : IConfigClass {
     internal bool isSyncEnabled = false;
 

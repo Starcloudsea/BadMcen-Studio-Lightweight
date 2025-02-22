@@ -3,13 +3,13 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BadMC_Launcher.Models.Classes;
-using BadMC_Launcher.Models.Classes.MinecraftClass;
+using BadMC_Launcher.Extensions;
+using BadMC_Launcher.Classes;
 using Microsoft.Windows.ApplicationModel.Resources;
 using MinecraftLaunch.Base.Models.Authentication;
 using MinecraftLaunch.Base.Models.Game;
 
-namespace BadMC_Launcher.Models.Datas.MinecraftDatas;
+namespace BadMC_Launcher.Models.Datas.SettingsDatas;
 internal static class MinecraftConfig {
     internal static IEnumerable<Account> minecraftAccounts = new JsonList<Account>();
 
@@ -31,7 +31,7 @@ internal static class MinecraftConfig {
 
     internal static int maxMemorySize = 1024;
 
-    internal static string? launcherName = App.GetService<ResourceLoader>().GetString("MinecraftTitleName");
+    internal static string? launcherName = App.GetService<ResourceLoader>().GetString("MinecraftConfig_MinecraftTitleNameResource");
 
     internal static IEnumerable<string>? jvmArguments;
 }

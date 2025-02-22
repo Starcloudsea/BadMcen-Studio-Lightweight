@@ -1,19 +1,19 @@
 ﻿<Application x:Class="BadMC_Launcher.App"
-       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
 
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <!-- Load WinUI resources -->
+                <!--  Load WinUI resources  -->
                 <XamlControlsResources xmlns="using:Microsoft.UI.Xaml.Controls" />
-                <!-- Load Uno.UI.Toolkit resources -->
+                <!--  Load Uno.UI.Toolkit resources  -->
                 <ToolkitResources xmlns="using:Uno.Toolkit.UI" />
-                <ResourceDictionary Source="/Views/Styles/TransparentButton.xaml"/>
-                <ResourceDictionary Source="/Views/Styles/ItemTemplate/MinecraftPathItemsTemplate.xaml"/>
-                <ResourceDictionary Source="/Views/Styles/ItemTemplate/MinecraftItemsTemplate.xaml"/>
+                <ResourceDictionary Source="/Views/Styles/TransparentButton.xaml" />
+                <ResourceDictionary Source="/Views/Styles/ItemTemplate/MinecraftPathItemsTemplate.xaml" />
+                <ResourceDictionary Source="/Views/Styles/ItemTemplate/MinecraftItemsTemplate.xaml" />
             </ResourceDictionary.MergedDictionaries>
-            <!-- Add resources here -->
+            <!--  Add resources here  -->
         </ResourceDictionary>
     </Application.Resources>
 </Application>

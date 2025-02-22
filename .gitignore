@@ -403,3 +403,4 @@ FodyWeavers.xsd
 solution-config.props
 # Publish Profiles
 !**/Properties/PublishProfiles/*.pubxml
+/.vs/BadMC_Launcher/v17/.suo

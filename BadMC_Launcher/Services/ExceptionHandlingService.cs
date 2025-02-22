@@ -1,4 +1,4 @@
-namespace BadMC_Launcher.Services;
+namespace BadMC_Launcher.Servicess;
 internal class ExceptionHandlingService {
     public void ToastException(string title, string message, Exception? exception = null, Action? action = null) {
         action?.Invoke();

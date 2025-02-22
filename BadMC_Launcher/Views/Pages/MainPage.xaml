@@ -1,25 +1,151 @@
 ﻿<Page x:Class="BadMC_Launcher.Views.Pages.MainPage"
       xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
       xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+      xmlns:Interactivity="using:Microsoft.Xaml.Interactivity"
+      xmlns:animatedvisuals="using:Microsoft.UI.Xaml.Controls.AnimatedVisuals"
       xmlns:local="using:BadMC_Launcher"
+      xmlns:ui="using:CommunityToolkit.WinUI"
+      xmlns:userControls="using:BadMC_Launcher.Views.UserControls"
       xmlns:utu="using:Uno.Toolkit.UI"
       Background="{ThemeResource ApplicationPageBackgroundThemeBrush}">
     <Grid x:Name="MainGrid" utu:SafeArea.Insets="VisibleBounds">
         <Grid.RowDefinitions>
-            <RowDefinition Height="48"/>
-            <RowDefinition Height="*"/>
+            <RowDefinition Height="48" />
+            <RowDefinition Height="*" />
         </Grid.RowDefinitions>
-        <!-- TitleBar -->
-        <Border HorizontalAlignment="Stretch" VerticalAlignment="Stretch" Grid.Row="0" Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
-            <StackPanel Orientation="Horizontal" HorizontalAlignment="Center" VerticalAlignment="Center" Spacing="6">
-                <Button Style="{StaticResource TransparentButton}" Height="36" Width="36">
-                    <FontIcon Glyph="&#xE7C4;"/>
+        <!--  TitleBar  -->
+        <Border x:Name="AppTitleBar"
+                Grid.Row="0"
+                HorizontalAlignment="Stretch"
+                VerticalAlignment="Stretch"
+                Background="{ThemeResource AcrylicInAppFillColorDefaultBrush}">
+            <StackPanel HorizontalAlignment="Center"
+                        VerticalAlignment="Center"
+                        Orientation="Horizontal"
+                        Spacing="6">
+                <Button Width="36"
+                        Height="36"
+                        Style="{StaticResource TransparentButton}">
+                    <FontIcon Glyph="&#xE7C4;" />
                 </Button>
-                <Button Style="{StaticResource TransparentButton}" Height="36" Width="36"/>
-                <TextBlock Text="{Binding WindowName}" FontSize="16" FontWeight="Bold" VerticalAlignment="Center"/>
+                <Button Width="36"
+                        Height="36"
+                        Style="{StaticResource TransparentButton}">
+                    <ImageIcon Width="24"
+                               Height="24"
+                               Source="\Assets\Icons\appicon_foreground.png" />
+                </Button>
+
+                <TextBlock VerticalAlignment="Center"
+                           FontSize="16"
+                           FontWeight="Bold"
+                           Text="{Binding WindowName}" />
             </StackPanel>
+
+            <!--  MenuFlyout  -->
+            <FlyoutBase.AttachedFlyout>
+                <Flyout x:Name="MainSideBarFlyout" Placement="TopEdgeAlignedLeft">
+                    <Flyout.FlyoutPresenterStyle>
+                        <Style TargetType="FlyoutPresenter">
+                            <Setter Property="MaxWidth" Value="800" />
+                            <Setter Property="Padding" Value="0" />
+                            <Setter Property="CornerRadius" Value="8" />
+                            <Setter Property="VerticalAlignment" Value="Stretch" />
+                            <Setter Property="Margin" Value="52,8,0,0" />
+                        </Style>
+                    </Flyout.FlyoutPresenterStyle>
+                    <Interactivity:Interaction.Behaviors>
+                        <Interactivity:EventTriggerBehavior EventName="Closed">
+                            <Interactivity:InvokeCommandAction Command="{Binding MainSideBarFlyoutClosedCommand}" />
+                        </Interactivity:EventTriggerBehavior>
+                    </Interactivity:Interaction.Behaviors>
+                    <Frame x:Name="MainSideBarFlyoutFrame"
+                           Width="700"
+                           Height="544" />
+                </Flyout>
+            </FlyoutBase.AttachedFlyout>
         </Border>
-        <!-- DashBoard -->
-        <Frame Grid.Row="1" x:Name="MainFrame" HorizontalAlignment="Stretch" VerticalAlignment="Stretch"/>
+
+        <!--  DashBoard  -->
+        <Grid Grid.Row="1"
+              HorizontalAlignment="Stretch"
+              VerticalAlignment="Stretch">
+            <!--  SideBar  -->
+            <NavigationView x:Name="MainSideBar"
+                            Margin="-1"
+                            FooterMenuItemsSource="{Binding MainSideBarFooterItems}"
+                            IsBackButtonVisible="Collapsed"
+                            IsSettingsVisible="false"
+                            MenuItemsSource="{Binding MainSideBarItems}"
+                            PaneDisplayMode="LeftCompact"
+                            SelectedItem="{Binding MainSideBarSelectedItem, Mode=TwoWay}">
+
+                <!--  SideBar Styles  -->
+                <NavigationView.Resources>
+                    <StaticResource x:Key="NavigationViewExpandedPaneBackground" ResourceKey="AcrylicInAppFillColorDefaultBrush" />
+                    <SolidColorBrush x:Key="NavigationViewContentBackground" Color="Transparent" />
+                </NavigationView.Resources>
+
+                <!--  MenuItem Template  -->
+                <NavigationView.MenuItemTemplate>
+                    <DataTemplate>
+                        <NavigationViewItem Content="{Binding ItemName}"
+                                            Icon="{Binding ItemIcon}"
+                                            InfoBadge="{Binding ItemInfoBadge}" />
+                    </DataTemplate>
+                </NavigationView.MenuItemTemplate>
+
+                <Interactivity:Interaction.Behaviors>
+                    <Interactivity:EventTriggerBehavior EventName="SelectionChanged">
+                        <Interactivity:InvokeCommandAction Command="{Binding MainSideBarSelectedCommand}" CommandParameter="{Binding ElementName=AppTitleBar}" />
+                    </Interactivity:EventTriggerBehavior>
+                </Interactivity:Interaction.Behaviors>
+
+                <Grid Margin="16">
+                    <!--  LaunchPad  -->
+                    <userControls:LaunchPad Width="336" HorizontalAlignment="Right" />
+
+                    <!--  Page Frame  -->
+                    <Frame x:Name="MainSideBarFrame">
+                        <Interactivity:Interaction.Behaviors>
+                            <Interactivity:EventTriggerBehavior EventName="Navigated">
+                                <Interactivity:InvokeCommandAction Command="{Binding MainSideBarFrameNavigatedCommand}" CommandParameter="{Binding ElementName=MainSideBarFrame}" />
+                            </Interactivity:EventTriggerBehavior>
+                        </Interactivity:Interaction.Behaviors>
+                    </Frame>
+
+                    <!--  PageFrame Button  -->
+                    <StackPanel x:Name="MainSideBarPageMenu"
+                                Margin="6"
+                                HorizontalAlignment="Right"
+                                VerticalAlignment="Top"
+                                Orientation="Horizontal"
+                                Spacing="6"
+                                Visibility="{Binding MainSideBarToolVisibility}">
+                        <!--  Back to Page  -->
+                        <Button Width="36"
+                                Height="36"
+                                Command="{Binding BackButtonCommand}"
+                                CommandParameter="{Binding ElementName=MainSideBarFrame}"
+                                Style="{StaticResource TransparentButton}">
+                            <AnimatedIcon x:Name="SearchAnimatedIcon" FallbackIconSource="{ui:FontIconSource Glyph=&#xE72B;}">
+                                <AnimatedIcon.Source>
+                                    <animatedvisuals:AnimatedBackVisualSource />
+                                </AnimatedIcon.Source>
+                            </AnimatedIcon>
+                        </Button>
+
+                        <!--  Close Page  -->
+                        <Button Width="36"
+                                Height="36"
+                                Command="{Binding CloseButtonCommand}"
+                                CommandParameter="{Binding ElementName=MainSideBarFrame}"
+                                Style="{StaticResource TransparentButton}">
+                            <FontIcon FontSize="12" Glyph="&#xE711;" />
+                        </Button>
+                    </StackPanel>
+                </Grid>
+            </NavigationView>
+        </Grid>
     </Grid>
 </Page>

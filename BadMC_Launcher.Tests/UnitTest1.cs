@@ -2,7 +2,7 @@ using System;
 using System.Diagnostics;
 using System.Net;
 using BadMC_Launcher.Constants;
-using BadMC_Launcher.Models.Classes;
+using BadMC_Launcher.Classes;
 using Microsoft.Extensions.DependencyInjection;
 using Microsoft.UI.Xaml.Media.Imaging;
 using MinecraftLaunch.Base.Models.Game;
