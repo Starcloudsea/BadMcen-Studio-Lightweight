@@ -1,7 +1,6 @@
 using System.Collections.ObjectModel;
 using BadMC_Launcher.Classes;
 using BadMC_Launcher.Servicess.Settings;
-using BadMC_Launcher.Utilities.MinecraftUtils;
 using BenchmarkDotNet.Attributes;
 using static System.Runtime.InteropServices.JavaScript.JSType;
 

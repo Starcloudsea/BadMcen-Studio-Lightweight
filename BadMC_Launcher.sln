@@ -16,6 +16,7 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "Solution Items", "Solution 
 		Directory.Build.targets = Directory.Build.targets
 		Directory.Packages.props = Directory.Packages.props
 		global.json = global.json
+		Resources.Designer.t4 = Resources.Designer.t4
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "BadMC_Launcher.Benchmarks", "BadMC_Launcher.Benchmarks\BadMC_Launcher.Benchmarks.csproj", "{C4CC53B8-E8A1-4402-B95F-5991F38C47CC}"
@@ -52,5 +53,8 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{37934AC8-0922-44DC-A250-022CB8486987} = {407D5340-E3BE-4D53-A84A-AF99FE35BB2E}
 		{C4CC53B8-E8A1-4402-B95F-5991F38C47CC} = {407D5340-E3BE-4D53-A84A-AF99FE35BB2E}
+	EndGlobalSection
+	GlobalSection(ExtensibilityGlobals) = postSolution
+		RESX_ExcelExportMode = MultipleSheets
 	EndGlobalSection
 EndGlobal

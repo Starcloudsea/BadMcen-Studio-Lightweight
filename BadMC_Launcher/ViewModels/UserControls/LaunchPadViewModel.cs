@@ -5,27 +5,40 @@ using System.ComponentModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BadMC_Launcher.Models.Datas.ViewDatas;
-using BadMC_Launcher.Classes;
 using BadMC_Launcher.Servicess.Settings;
 using CommunityToolkit.Mvvm.Input;
 using Microsoft.UI.Xaml.Media.Imaging;
 using Microsoft.Windows.ApplicationModel.Resources;
+using BadMC_Launcher.Classes.Minecraft;
+using BadMC_Launcher.Extensions;
 
 namespace BadMC_Launcher.ViewModels.UserControls;
 public partial class LaunchPadViewModel : ObservableObject {
     MinecraftConfigService MinecraftService = App.GetService<MinecraftConfigService>();
     MinecraftPathEntry? minecraftPathEntry;
+    ObservableCollection<MinecraftItem> minecraftList = new ObservableCollection<MinecraftItem>();
 
     public LaunchPadViewModel() {
+        //Check Active Minecraft Path
         if (MinecraftService.ActiveMinecraftPath != null) {
-            minecraftPathEntry = MinecraftService.MinecraftPaths.FirstOrDefault(item => item.MinecraftPath == MinecraftService.ActiveMinecraftPath);
+
+            //Get Minecraft Entry
+            minecraftPathEntry = MinecraftService.MinecraftPaths.First(item => item.MinecraftPath == MinecraftService.ActiveMinecraftPath);
             if (minecraftPathEntry != null) {
-                MinecraftList = (ObservableCollection<MinecraftItem>)MinecraftItem.GetMinecraftItems(minecraftPathEntry);
+
+                //Get Minecraft Items
+                foreach (var minecraftEntry in minecraftPathEntry.GetMinecrafts()) {
+                    var item = minecraftPathEntry.GetMinecraftItem(minecraftEntry);
+                    if (item != null)
+                    minecraftList.Add(item);
+                }
+                MinecraftList = minecraftList;
+
+
                 if (minecraftPathEntry.ActiveMinecraftEntryId != null) {
-                    var minecraftItem = MinecraftItem.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId, minecraftPathEntry);
+                    var minecraftItem = minecraftPathEntry.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId);
                     if (minecraftItem != null) {
-                        MinecraftListSelectedItem = MinecraftList.FirstOrDefault(item => item.MinecraftName == minecraftItem.MinecraftName);
+                        MinecraftListSelectedItem = MinecraftList.FirstOrDefault(item => item.GetMinecraftName() == minecraftItem.GetMinecraftName());
                     }
                 }
                 MinecraftPathListSelectedItem = minecraftPathEntry;
@@ -69,7 +82,8 @@ public partial class LaunchPadViewModel : ObservableObject {
         MinecraftService.SyncSettingGet();
         minecraftPathEntry = MinecraftService.MinecraftPaths.FirstOrDefault(item => item.MinecraftPath == MinecraftService.ActiveMinecraftPath);
         if (MinecraftService.ActiveMinecraftPath != null && minecraftPathEntry != null) {
-            MinecraftList = (ObservableCollection<MinecraftItem>)MinecraftItem.GetMinecraftItems(minecraftPathEntry);
+            minecraftPathEntry.GetMinecrafts();
+            MinecraftList = minecraftList;
             SetLaunchButtonEntry();
         }
     }
@@ -105,7 +119,7 @@ public partial class LaunchPadViewModel : ObservableObject {
         if (parameter is ListView listView) {
             var item = (MinecraftItem)listView.SelectedItem;
             if (item != null && MinecraftService.ActiveMinecraftPath != null && minecraftPathEntry != null) {
-                minecraftPathEntry.ActiveMinecraftEntryId = item.MinecraftName;
+                minecraftPathEntry.ActiveMinecraftEntryId = item.GetMinecraftName();
                 SetLaunchButtonEntry();
             }
         }
@@ -118,9 +132,9 @@ public partial class LaunchPadViewModel : ObservableObject {
             MinecraftService.ActiveMinecraftPath = item.MinecraftPath;
             minecraftPathEntry = MinecraftService.MinecraftPaths.FirstOrDefault(item => item.MinecraftPath == MinecraftService.ActiveMinecraftPath);
             if (MinecraftService.ActiveMinecraftPath != null && minecraftPathEntry != null) {
-                MinecraftList = (ObservableCollection<MinecraftItem>)MinecraftItem.GetMinecraftItems(minecraftPathEntry);
+                MinecraftList = (ObservableCollection<MinecraftItem>)minecraftPathEntry.GetMinecraftItems();
                 if (minecraftPathEntry.ActiveMinecraftEntryId != null) {
-                    MinecraftListSelectedItem = MinecraftItem.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId, minecraftPathEntry);
+                    MinecraftListSelectedItem = minecraftPathEntry.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId);
                 }
             }
             else {
@@ -142,9 +156,9 @@ public partial class LaunchPadViewModel : ObservableObject {
     public void SetLaunchButtonEntry() {
         if (MinecraftService.ActiveMinecraftPath != null && minecraftPathEntry != null && minecraftPathEntry.ActiveMinecraftEntryId != null) {
             if (MinecraftService.ActiveMinecraftPath != null) {
-                var minecraftItem = MinecraftItem.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId, minecraftPathEntry);
+                var minecraftItem = minecraftPathEntry.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId);
                 if (minecraftItem != null) {
-                    GameEntryName = minecraftItem.MinecraftName;
+                    GameEntryName = minecraftItem.GetMinecraftName();
                     GameEntryImage = minecraftItem.MinecraftImage;
                     return;
                 }

@@ -144,10 +144,31 @@
   <data name="LaunchPad_MinecraftEmptyListTipsHyperLinkButtonResource.Text" xml:space="preserve">
     <value>Go to the Ontology page to manage Minecraft ontologies.</value>
   </data>
-  <data name="MainMenu_PageNameResource" xml:space="preserve">
-    <value>Menu</value>
-  </data>
   <data name="MainMenuPage_SearchResource.PlaceholderText" xml:space="preserve">
     <value>Try searching for what? ψ(｀∇´)ψ</value>
+  </data>
+  <data name="MainPage_MainMenuNameResource" xml:space="preserve">
+    <value>Menu</value>
+  </data>
+  <data name="MainMenuPage_SearchFilterMinecraftEntryNameResource" xml:space="preserve">
+    <value>Minecraft Ontologies</value>
+  </data>
+  <data name="MainMenuPage_SearchFilterTagsResource.Text" xml:space="preserve">
+    <value>Filter search results</value>
+  </data>
+  <data name="Global_BetaTipResource.ToolTipService.ToolTip" xml:space="preserve">
+    <value>This feature is currently in beta status and may be changed or removed at any time.</value>
+  </data>
+  <data name="MainMenuPage_SearchFilterRealTimeToggleResource.Text" xml:space="preserve">
+    <value>Real-time updates</value>
+  </data>
+  <data name="MainMenuPage_SettingsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Settings</value>
+  </data>
+  <data name="MainMenuPage_ScriptsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>Scripts</value>
+  </data>
+  <data name="MainPage_MainSideBarNavigationView.PaneTitle" xml:space="preserve">
+    <value>Let's BadMC Launcher！ 🥳😝😈</value>
   </data>
 </root>

@@ -144,10 +144,31 @@
   <data name="LaunchPad_MinecraftEmptyListTipsHyperLinkButtonResource.Text" xml:space="preserve">
     <value>转到本体页面以管理Minecraft本体.</value>
   </data>
-  <data name="MainMenu_PageNameResource" xml:space="preserve">
-    <value>菜单</value>
-  </data>
   <data name="MainMenuPage_SearchResource.PlaceholderText" xml:space="preserve">
     <value>搜点什么？ψ(｀∇´)ψ</value>
+  </data>
+  <data name="MainPage_MainMenuNameResource" xml:space="preserve">
+    <value>菜单</value>
+  </data>
+  <data name="MainMenuPage_SearchFilterMinecraftEntryNameResource" xml:space="preserve">
+    <value>Minecraft 本体</value>
+  </data>
+  <data name="MainMenuPage_SearchFilterTagsResource.Text" xml:space="preserve">
+    <value>筛选搜索结果</value>
+  </data>
+  <data name="Global_BetaTipResource.ToolTipService.ToolTip" xml:space="preserve">
+    <value>该功能目前为测试状态，随时可能更改或删除.</value>
+  </data>
+  <data name="MainMenuPage_SearchFilterRealTimeToggleResource.Text" xml:space="preserve">
+    <value>实时更新</value>
+  </data>
+  <data name="MainMenuPage_SettingsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>设置</value>
+  </data>
+  <data name="MainMenuPage_ScriptsButton.ToolTipService.ToolTip" xml:space="preserve">
+    <value>脚本</value>
+  </data>
+  <data name="MainPage_MainSideBarNavigationView.PaneTitle" xml:space="preserve">
+    <value>让我们一起 BadMC Launcher！ 🥳😝😈</value>
   </data>
 </root>

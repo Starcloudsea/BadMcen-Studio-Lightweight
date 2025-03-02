@@ -1,4 +1,5 @@
 using BadMC_Launcher.Classes;
+using BadMC_Launcher.Classes.MainSearch;
 using BadMC_Launcher.Services.ViewServices;
 using BadMC_Launcher.Servicess;
 using BadMC_Launcher.Servicess.Settings;
@@ -19,7 +20,7 @@ public partial class App : Application {
     /// executed, and as such is the logical equivalent of main() or WinMain().
     /// </summary>
     public App() {
-        this.InitializeComponent();
+        InitializeComponent();
     }
 
     public static new App Current => (App)Application.Current;
@@ -85,10 +86,8 @@ public partial class App : Application {
                     services.AddSingleton<MinecraftConfigService>();
                     services.AddSingleton<ThemeSettingService>();
                     services.AddSingleton<MainSideBarManagerService>();
+                    services.AddSingleton<MainMenuService>();
                     services.AddTransient<SingleMinecraftConfigService>();
-
-                    //Regist ViewModels
-                    services.AddSingleton<MainPageViewModel>();
                 })
             );
         MainWindow = builder.Window;
@@ -130,7 +129,7 @@ public partial class App : Application {
         }
 
         //Regist Pages
-        RegisterPages();
+        GlobalRegister();
 
         // Ensure the current window is active
         MainWindow.Activate();
@@ -148,18 +147,31 @@ public partial class App : Application {
         throw new InvalidOperationException("Service not found.");
     }
 
-    private void GetSettings() {
+    private static void GetSettings() {
         GetService<MinecraftConfigService>().SyncSettingGet();
         GetService<MinecraftConfigService>().isSyncEnabled = true;
         GetService<ThemeSettingService>().SyncSettingGet();
         GetService<ThemeSettingService>().isSyncEnabled = true;
     }
 
-    private void RegisterPages() {
+    private void GlobalRegister() {
+        //Register MainSideBarItem
         GetService<MainSideBarManagerService>().Register(new MainSideBarItem() {
-            ItemName = App.GetService<ResourceLoader>().GetString("MainMenu_PageNameResource"),
+            ItemName = App.GetService<ResourceLoader>().GetString("MainPage_MainMenuNameResource"),
             ItemIcon = new FontIcon() { Glyph = "\uE74C" },
             NavigatePage = typeof(MainMenuPage),
+        });
+
+        GetService<MainSideBarManagerService>().Register(new MainSideBarItem() {
+            ItemName = App.GetService<ResourceLoader>().GetString("MainPage_MainMenuNameResource"),
+            ItemIcon = new FontIcon() { Glyph = "\uE74C" },
+            NavigatePage = typeof(MainMenuPage),
+        });
+
+        //Register MainMenuSearchFilterItem
+        GetService<MainMenuService>().Register(new MainMenuSearchMinecraftEntryFilter() {
+            ItemName = GetService<ResourceLoader>().GetString("MainMenuPage_SearchFilterMinecraftEntryNameResource"),
+            IconGlyph = "\uE7FC"
         });
     }
 }

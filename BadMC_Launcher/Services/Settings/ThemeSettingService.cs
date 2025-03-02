@@ -6,12 +6,11 @@ using System.Text;
 using System.Text.Json;
 using System.Text.Json.Serialization;
 using BadMC_Launcher.Interfaces;
-using BadMC_Launcher.Utilities;
-using CommunityToolkit.Mvvm.DependencyInjection;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Xaml.Media.Imaging;
 using BadMC_Launcher.Models.Datas.SettingsDatas;
+using BadMC_Launcher.Constants.Enums;
 
 namespace BadMC_Launcher.Servicess.Settings;
 public class ThemeSettingService : IConfigClass {
@@ -90,7 +89,7 @@ public class ThemeSettingService : IConfigClass {
                 SetBrush(new BitmapImage(new Uri(Path.Combine(AppDataPath.AssetsPath, "Wallpapers", ThemeSetting.imageBackgroundName))), backgroundChanged);
                 break;
             case BackgroundTypeEnum.BingWallpaper:
-                SetBrush(new BitmapImage(new Uri(await GetWallpaper.GetBingWallpaperUrl())), backgroundChanged);
+                SetBrush(new BitmapImage(new Uri(await GetBingWallpaperUrl())), backgroundChanged);
                 break;
             case BackgroundTypeEnum.Acrylic:
                 //TODO: Only MacOS
@@ -131,6 +130,33 @@ public class ThemeSettingService : IConfigClass {
             return;
         }
         throw new InvalidOperationException("Unsupported type for SetBrushAsync");
+    }
+
+    public static async Task<string> GetBingWallpaperUrl() {
+        try {
+            var jsonText = await App.GetService<HttpClient>().GetStringAsync("https://cn.bing.com/HPImageArchive.aspx?format=js&idx=0&n=1&mkt=zh-CN");
+            using JsonDocument doc = JsonDocument.Parse(jsonText);
+            var status = doc.RootElement.TryGetProperty("images", out var imagesjsonElement);
+            status = imagesjsonElement[0].TryGetProperty("url", out var urljsonElement);
+            if (status == true) {
+                return "https://cn.bing.com" + urljsonElement.GetString() ?? throw new Exception("Can't get Bing wallpapers.");
+            }
+        }
+        catch (Exception ex) {
+            switch (ex) {
+                case HttpRequestException:
+                case TaskCanceledException:
+                    //TODO: Toast Exception
+                    break;
+                case JsonException:
+                    //TODO: Toast Exception
+                    break;
+                default:
+                    throw;
+            }
+        }
+        //TODO: Toast Exception
+        throw new Exception("Can't get Bing wallpapers.");
     }
 }
 

@@ -11,6 +11,7 @@
     <ItemGroup>
         <PackageReference Include="BenchmarkDotNet" />
         <PackageReference Include="BenchmarkDotNet.TestAdapter" />
+        <PackageReference Include="CommunityToolkit.Labs.WinUI.TokenView" />
         <PackageReference Include="CommunityToolkit.WinUI.Controls.TokenizingTextBox" />
         <PackageReference Include="Microsoft.NET.Test.Sdk" />
         <ProjectReference Include="..\BadMC_Launcher\BadMC_Launcher.csproj" />

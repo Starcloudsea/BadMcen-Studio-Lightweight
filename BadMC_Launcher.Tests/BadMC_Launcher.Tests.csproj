@@ -9,6 +9,7 @@
   <ItemGroup>
     <PackageReference Include="BenchmarkDotNet" />
     <PackageReference Include="BenchmarkDotNet.TestAdapter" />
+    <PackageReference Include="CommunityToolkit.Labs.WinUI.TokenView" />
     <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.MetadataControl" />
     <PackageReference Include="CommunityToolkit.WinUI.Controls.TokenizingTextBox" />

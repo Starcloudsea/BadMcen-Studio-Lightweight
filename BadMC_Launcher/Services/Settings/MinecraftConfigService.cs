@@ -7,7 +7,6 @@ using System.Reflection;
 using System.Text;
 using System.Text.Json;
 using System.Threading.Tasks;
-using BadMC_Launcher.Classes;
 using MinecraftLaunch.Base.Models.Authentication;
 using Newtonsoft.Json.Linq;
 using MinecraftLaunch.Base.Models.Game;
@@ -22,20 +21,21 @@ using System.Xml.Linq;
 using System.ComponentModel;
 using BadMC_Launcher.Models.Datas.SettingsDatas;
 using BadMC_Launcher.Extensions;
+using BadMC_Launcher.Classes.Minecraft;
 
 namespace BadMC_Launcher.Servicess.Settings;
 public class MinecraftConfigService : IConfigClass {
     internal bool isSyncEnabled = false;
 
     public MinecraftConfigService() {
-        if (MinecraftConfig.minecraftAccounts is JsonList<Account> minecraftAccountsJsonList
-            && MinecraftConfig.javaPaths is JsonList<string> javaPathsJsonList
-            && MinecraftConfig.minecraftPaths is JsonList<MinecraftPathEntry> minecraftPathsJsonList) {
+        if (MinecraftConfig.minecraftAccounts is ObservableDataList<Account> minecraftAccountsObservableDataList
+            && MinecraftConfig.javaPaths is ObservableDataList<string> javaPathsObservableDataList
+            && MinecraftConfig.minecraftPaths is ObservableDataList<MinecraftPathEntry> minecraftPathsObservableDataList) {
 
             //Triggers an event when a property is changed
-            minecraftAccountsJsonList.CollectionChanged += OnCollectionChanged;
-            javaPathsJsonList.CollectionChanged += OnCollectionChanged;
-            minecraftPathsJsonList.CollectionChanged += OnCollectionChanged;
+            minecraftAccountsObservableDataList.CollectionChanged += OnCollectionChanged;
+            javaPathsObservableDataList.CollectionChanged += OnCollectionChanged;
+            minecraftPathsObservableDataList.CollectionChanged += OnCollectionChanged;
         }
     }
 
@@ -165,7 +165,7 @@ public class MinecraftConfigService : IConfigClass {
     }
 
     public bool SyncSettingGet() {
-        if (App.GetService<FileService>().ReadConfig<MinecraftConfigService>(Path.Combine(AppDataPath.ConfigsPath, "MinecraftConfigs.json"), MinecraftConfigServiceContext.Default.MinecraftConfigService, out var jsonClass) && jsonClass != null) {
+        if (App.GetService<FileService>().ReadConfig(Path.Combine(AppDataPath.ConfigsPath, "MinecraftConfigs.json"), MinecraftConfigServiceContext.Default.MinecraftConfigService, out var jsonClass) && jsonClass != null) {
             //TODO: 解蜜
             MinecraftConfig.minecraftAccounts = jsonClass.MinecraftAccounts;
             MinecraftConfig.javaPaths = jsonClass.JavaPaths;

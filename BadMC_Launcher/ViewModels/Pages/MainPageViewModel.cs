@@ -5,26 +5,36 @@ using BadMC_Launcher.Models.Datas.ViewDatas;
 using BadMC_Launcher.Servicess.Settings;
 using BadMC_Launcher.Views.Pages;
 using CommunityToolkit.Mvvm.Input;
+using CommunityToolkit.Mvvm.Messaging.Messages;
+using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Xaml.Controls.Primitives;
+using Microsoft.UI.Xaml.Media.Animation;
+using BadMC_Launcher.Constants.Enums;
+using Uno.UI.RemoteControl;
 
 namespace BadMC_Launcher.ViewModels.Pages;
 
 public partial class MainPageViewModel : ObservableObject {
-    internal Frame? mainSideBarFrame;
-    internal Frame? mainSideBarFlyoutFrame;
-    internal NavigationView? mainSideBar;
+
 
     public bool MainSideBarFrameCanGoBack { get; set; }
 
     public MainPageViewModel() {
+        //Init Property
         WindowName = App.GetService<ThemeSettingService>().WindowName;
         MainSideBarToolVisibility = Visibility.Collapsed;
         MainSideBarItems = MainSideBarData.MainSideBarItems;
         MainSideBarFooterItems = MainSideBarData.MainSideBarFooterItems;
+        App.GetService<ThemeSettingService>().SetBackground((brush) => {
+        AppBackground = brush;
+        });
     }
 
     [ObservableProperty]
     public partial string? WindowName { get; set; }
+    
+    [ObservableProperty]
+    public partial Brush? AppBackground { get; set; }
 
     //MainSideBar Items
     [ObservableProperty]
@@ -44,8 +54,7 @@ public partial class MainPageViewModel : ObservableObject {
 
     [RelayCommand]
     public void MainSideBarFrameNavigated(object parameter) {
-        var frame = parameter as Frame;
-        if (frame != null) {
+        if (parameter is Frame frame) {
             if (frame.Content == null) {
                 MainSideBarToolVisibility = Visibility.Collapsed;
             }
@@ -56,11 +65,9 @@ public partial class MainPageViewModel : ObservableObject {
     }
 
     [RelayCommand]
-    public void MainSideBarSelected(object parameter) {
-        if (parameter is Border appTitleBar && mainSideBar != null && mainSideBar.SelectedItem is MainSideBarItem mainSideBarSelectedItem && mainSideBarFlyoutFrame != null) {
-            mainSideBarFlyoutFrame.Navigate(mainSideBarSelectedItem.NavigatePage);
-            FlyoutBase.ShowAttachedFlyout(appTitleBar);
-
+    public void MainSideBarSelectionChanged(object parameter) {
+        if (parameter is NavigationView mainSideBar && mainSideBar.SelectedItem != null) {
+            SendInvokeFuncMessage(((MainSideBarItem)mainSideBar.SelectedItem).NavigatePage, MessengerTokenEnum.MainPage_FlyoutPageNavigateToken);
         }
     }
 
@@ -74,6 +81,7 @@ public partial class MainPageViewModel : ObservableObject {
     [RelayCommand]
     public void CloseButton(Frame parameter) {
         parameter.Content = null;
+        MainSideBarToolVisibility = Visibility.Collapsed;
     }
 
     [RelayCommand]
@@ -81,31 +89,25 @@ public partial class MainPageViewModel : ObservableObject {
         MainSideBarSelectedItem = null;
     }
 
-    public void NavigateTo(Type pageType) {
-        if (mainSideBarFrame != null) {
-            mainSideBarFrame.Navigate(pageType);
-        }
-    }
-
-    public void SetBackground(Action<Brush> brushAction) {
-        
-        var service = App.GetService<ThemeSettingService>();
-        if (service == null) {
-            //TODO: Exception Dialog
-            return;
-        }
-        service.SetBackground((brush) => {
-            if (brush != null) {
-                brushAction(brush);
-                return;
-            }
-        });
-    }
-
     internal void SetCanGoBack() {
+        var mainSideBarFrame = SendGetValueMessage<Frame>(MessengerTokenEnum.MainPage_MainSideBarFrameToken);
         if (mainSideBarFrame != null) {
-            MainSideBarFrameCanGoBack = mainSideBarFrame.CanGoBack;
+            MainSideBarFrameCanGoBack = mainSideBarFrame.Response.CanGoBack;
+            if (mainSideBarFrame.Response.Content == null) {
+                MainSideBarToolVisibility = Visibility.Collapsed;
+            }
+            else {
+                MainSideBarToolVisibility = Visibility.Visible;
+            }
         }
+    }
+
+    public void SendInvokeFuncMessage<T>(T value, MessengerTokenEnum tokenEnum) {
+        WeakReferenceMessenger.Default.Send(new ValueChangedMessage<T>(value), tokenEnum.ToString());
+    }
+
+    public RequestMessage<T> SendGetValueMessage<T>(MessengerTokenEnum tokenEnum) {
+        return WeakReferenceMessenger.Default.Send(new RequestMessage<T>(), tokenEnum.ToString());
     }
 }
  

@@ -8,24 +8,22 @@ using System.Text.Json.Serialization;
 using System.Threading.Tasks;
 
 namespace BadMC_Launcher.Extensions;
-public class JsonList<T> : ObservableCollection<T> {
+public class ObservableDataList<T> : ObservableCollection<T> {
 
-    public JsonList(IEnumerable<T> initialData) : base(initialData) {
+    public ObservableDataList(IEnumerable<T> initialData) : base(initialData) {
 
     }
-    public JsonList() {
+    public ObservableDataList() {
 
     }
     protected override void InsertItem(int index, T item) {
         if (!Contains(item)) {
             base.InsertItem(index, item);
-
         }
     }
     protected override void SetItem(int index, T item) {
         if (!Contains(item)) {
             base.SetItem(index, item);
-
         }
     }
 }

@@ -4,8 +4,10 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 
-namespace BadMC_Launcher.Constants;
-public enum ThemeTypeEnum {
-    Light,
-    Dark
+namespace BadMC_Launcher.Constants.Enums;
+
+public enum MainMenuItemSizeEnum {
+    Small,
+    Medium,
+    Large
 }

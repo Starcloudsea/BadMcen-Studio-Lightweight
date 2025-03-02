@@ -11,14 +11,14 @@
              d:DesignWidth="400"
              mc:Ignorable="d">
 
-    <!--  LaunchPad  -->
+    <!-- LaunchPad -->
     <Border Background="{ThemeResource AcrylicBackgroundFillColorDefaultBrush}" CornerRadius="8">
         <Grid>
-            <!--  Account View  -->
+            <!-- Account View -->
 
-            <!--  Card  -->
+            <!-- Card -->
 
-            <!--  Launch Button  -->
+            <!-- Launch Button -->
             <Button x:Name="LaunchButton"
                     Height="80"
                     HorizontalAlignment="Stretch"
@@ -57,7 +57,7 @@
                                    Text="{Binding GameEntryName}"
                                    TextTrimming="CharacterEllipsis" />
                     </StackPanel>
-                    <!--  Select ontology.  -->
+                    <!-- Select ontology -->
                     <Button Grid.Column="2"
                             Width="36"
                             Height="36"
@@ -65,26 +65,27 @@
                             Background="Transparent"
                             BorderBrush="Transparent"
                             BorderThickness="0">
-                        <!--  Animated Icons  -->
+                        <!-- Animated Icons -->
                         <AnimatedIcon Width="20"
                                       Height="20"
                                       HorizontalAlignment="Center"
                                       VerticalAlignment="Center"
-                                      FallbackIconSource="{ui:FontIconSource Glyph=&#xE70E;}"
                                       Foreground="{ThemeResource TextOnAccentFillColorPrimaryBrush}">
+                            <AnimatedIcon.FallbackIconSource>
+                                <FontIconSource Glyph="&#xE70E;" />
+                            </AnimatedIcon.FallbackIconSource>
                             <AnimatedIcon.Source>
-                                <!--  有BUG！！！  -->
                                 <animatedvisuals:AnimatedChevronUpDownSmallVisualSource />
                             </AnimatedIcon.Source>
                         </AnimatedIcon>
-                        <!--  Pop-up list of Minecraft ontologies  -->
+                        <!-- Pop-up list of Minecraft ontologies -->
                         <Button.Flyout>
-                            <Flyout>
+                            <Flyout Placement="TopEdgeAlignedRight">
                                 <Flyout.FlyoutPresenterStyle>
                                     <Style TargetType="FlyoutPresenter">
                                         <Setter Property="Padding" Value="0" />
                                         <Setter Property="CornerRadius" Value="8" />
-                                        <Setter Property="Margin" Value="-8,-24" />
+                                        <Setter Property="Margin" Value="0,-24" />
                                     </Style>
                                 </Flyout.FlyoutPresenterStyle>
                                 <Grid Width="432" Height="432">
@@ -92,7 +93,7 @@
                                         <RowDefinition Height="48" />
                                         <RowDefinition Height="*" />
                                     </Grid.RowDefinitions>
-                                    <!--  Menu  -->
+                                    <!-- Menu -->
                                     <Grid Grid.Row="0"
                                           Margin="0,4,0,0"
                                           HorizontalAlignment="Stretch">
@@ -100,7 +101,7 @@
                                             <ColumnDefinition Width="*" />
                                             <ColumnDefinition Width="48" />
                                         </Grid.ColumnDefinitions>
-                                        <!--  Select the .minecraft folder path  -->
+                                        <!-- Select the .minecraft folder path -->
                                         <ComboBox x:Name="MinecraftPathComboBox"
                                                   Grid.Column="0"
                                                   Height="36"
@@ -111,7 +112,7 @@
                                                   ItemsSource="{Binding MinecraftPathList}"
                                                   SelectedItem="{Binding MinecraftPathListSelectedItem, Mode=TwoWay}">
 
-                                            <!--  Custom Command  -->
+                                            <!-- Custom Command -->
                                             <Interactivity:Interaction.Behaviors>
                                                 <Interactivity:EventTriggerBehavior EventName="SelectionChanged" SourceObject="{Binding ElementName=MinecraftPathComboBox}">
                                                     <Interactivity:InvokeCommandAction Command="{Binding MinecraftPathsListSelectedCommand}" CommandParameter="{Binding ElementName=MinecraftPathComboBox}" />
@@ -121,32 +122,38 @@
                                         <Button Grid.Column="1"
                                                 Width="36"
                                                 Height="36"
-                                                Padding="0"
                                                 VerticalAlignment="Center"
-                                                Background="Transparent"
-                                                BorderThickness="0">
+                                                Style="{StaticResource ButtonTransparentStyle}">
                                             <FontIcon Glyph="&#xE712;" />
                                             <Button.Flyout>
                                                 <MenuFlyout>
-                                                    <MenuFlyoutItem x:Uid="LaunchPad_MinecraftListRefreshResource"
-                                                                    Command="{Binding RefreshMinecraftListCommand}"
-                                                                    Icon="{ui:FontIcon Glyph=&#xE72C;}" />
-                                                    <MenuFlyoutItem x:Uid="LaunchPad_MinecraftListsManagerResource" Icon="{ui:FontIcon Glyph=&#xE8B7;}" />
-                                                    <MenuFlyoutItem x:Uid="LaunchPad_ViewLocalMinecraftFolderResource"
-                                                                    Command="{Binding ViewLoaclMinecraftFolderCommand}"
-                                                                    Icon="{ui:FontIcon Glyph=&#xE8B7;}" />
+                                                    <MenuFlyoutItem x:Uid="LaunchPad_MinecraftListRefreshResource" Command="{Binding RefreshMinecraftListCommand}">
+                                                        <MenuFlyoutItem.Icon>
+                                                            <FontIcon Glyph="&#xE72C;" />
+                                                        </MenuFlyoutItem.Icon>
+                                                    </MenuFlyoutItem>
+                                                    <MenuFlyoutItem x:Uid="LaunchPad_MinecraftListsManagerResource">
+                                                        <MenuFlyoutItem.Icon>
+                                                            <FontIcon Glyph="&#xE8B7;" />
+                                                        </MenuFlyoutItem.Icon>
+                                                    </MenuFlyoutItem>
+                                                    <MenuFlyoutItem x:Uid="LaunchPad_ViewLocalMinecraftFolderResource" Command="{Binding ViewLoaclMinecraftFolderCommand}">
+                                                        <MenuFlyoutItem.Icon>
+                                                            <FontIcon Glyph="&#xE838;" />
+                                                        </MenuFlyoutItem.Icon>
+                                                    </MenuFlyoutItem>
                                                 </MenuFlyout>
                                             </Button.Flyout>
                                         </Button>
                                     </Grid>
-                                    <!--  If there is no ontology in the list, a prompt is displayed.  -->
+                                    <!-- If there is no ontology in the list, a prompt is displayed. -->
                                     <StackPanel x:Name="MinecraftEmptyTipsStackPanel"
                                                 Grid.Row="1"
                                                 HorizontalAlignment="Center"
                                                 VerticalAlignment="Center"
                                                 Opacity="0"
                                                 Spacing="8">
-                                        <!--  Animation  -->
+                                        <!-- Animation -->
                                         <StackPanel.OpacityTransition>
                                             <ScalarTransition />
                                         </StackPanel.OpacityTransition>
@@ -175,7 +182,7 @@
                                         <TextBlock x:Uid="LaunchPad_MinecraftEmptyListTipsHyperLinkButtonResource" HorizontalAlignment="Center" />
 
                                     </StackPanel>
-                                    <!--  Minecraft List  -->
+                                    <!-- Minecraft List -->
                                     <ListView x:Name="MinecraftList"
                                               Grid.Row="1"
                                               Margin="0,6,0,0"
