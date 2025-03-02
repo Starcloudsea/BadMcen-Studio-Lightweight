@@ -8,7 +8,7 @@
 
 **[Starcloudsea](https://github.com/Starcloudsea) 的作品(要累死我QAQ)**
 
-**主要贡献者: 
+**特别鸣谢: 
 [Drowned.Get](https://github.com/DrownedGet) |
 [YangSpring 429](https://github.com/YangSpring429) |
 [Gen123](https://github.com/geenh) |
@@ -231,6 +231,11 @@ WinUI: a modern UI framework with a rich set of controls and styles to build dyn
 Collection of controls for WinUI 2, WinUI 3, and Uno Platform developers. Simplifies and demonstrates common developer tasks building experiences for Windows with .NET.
 
 开源协议: [MIT license](https://github.com/CommunityToolkit/Windows/blob/main/License.md)
+
+## 鸣谢
+
+感谢 bangbang93 提供 Minecraft 的镜像服务.
+[赞助 bangbang93](https://afdian.net/@bangbang93)
 
 ## 开源协议
 [MPL-2.0 license](https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/LICENSE)，在二次分发时请务必遵守该协议.
