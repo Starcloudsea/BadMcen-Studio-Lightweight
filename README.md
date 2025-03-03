@@ -21,10 +21,10 @@
 ![GitHub Actions Workflow Status](https://img.shields.io/github/actions/workflow/status/BadBC-Studio/BadMC-Launcher/ci.yml?branch=Release&style=for-the-badge&logo=github&logoColor=0077FF&labelColor=F3F3F3&color=0077FF)
 ![GitHub repo size](https://img.shields.io/github/repo-size/BadBC-Studio/BadMC_Launcher?style=for-the-badge&logo=github&logoColor=0077FF&labelColor=F3F3F3&color=0077FF)
 
-![Discord](https://img.shields.io/discord/1025379148304240690?style=for-the-badge&logo=discord&logoColor=FF0000&label=Discord&labelColor=F3F3F3&color=FF0000&link=https%3A%2F%2Fdiscord.gg%2FjfZPPpC3Av)
-![Website](https://img.shields.io/website?url=https%3A%2F%2FBadBC-Studio.github.io%2FBadMC_Launcher&style=for-the-badge&logo=Vite&logoColor=FF0000&label=Pages&labelColor=F3F3F3&color=FF0000&link=https%3A%2F%2FBadBC-Studio.github.io%2FBadMC_Launcher)
-![Starcloudsea Bilibili](https://img.shields.io/badge/Bilibili-Starcloudsea-FF0000?style=for-the-badge&logo=bilibili&logoColor=FF0000&labelColor=F3F3F3&link=https%3A%2F%2Fspace.bilibili.com%2F2123349162)
-![Drowned.Get Bilibili](https://img.shields.io/badge/Bilibili-Drowned.Get-FF0000?style=for-the-badge&logo=bilibili&logoColor=FF0000&labelColor=F3F3F3&link=https%3A%2F%2Fspace.bilibili.com%2F527675045)
+[![Discord](https://img.shields.io/discord/1025379148304240690?style=for-the-badge&logo=discord&logoColor=FF0000&label=Discord&labelColor=F3F3F3&color=FF0000&link=https%3A%2F%2Fdiscord.gg%2FjfZPPpC3Av)](https://discord.gg/jfZPPpC3Av)
+[![Website](https://img.shields.io/website?url=https%3A%2F%2FBadBC-Studio.github.io%2FBadMC_Launcher&style=for-the-badge&logo=Vite&logoColor=FF0000&label=Pages&labelColor=F3F3F3&color=FF0000&link=https%3A%2F%2FBadBC-Studio.github.io%2FBadMC_Launcher)](https://badbc-studio.github.io/BadMC_Launcher)
+[![Starcloudsea Bilibili](https://img.shields.io/badge/Bilibili-Starcloudsea-FF0000?style=for-the-badge&logo=bilibili&logoColor=FF0000&labelColor=F3F3F3&link=https%3A%2F%2Fspace.bilibili.com%2F2123349162)](https://space.bilibili.com/2123349162)
+[![Drowned.Get Bilibili](https://img.shields.io/badge/Bilibili-Drowned.Get-FF0000?style=for-the-badge&logo=bilibili&logoColor=FF0000&labelColor=F3F3F3&link=https%3A%2F%2Fspace.bilibili.com%2F527675045)](https://space.bilibili.com/527675045)
 
 ![Alt](https://repobeats.axiom.co/api/embed/0b7fadbd7ecc0d0650374fded18845b77630e3a1.svg "Repobeats analytics image")
 </div>
@@ -49,7 +49,7 @@
 
 但是根据Starcloudsea的更新速度来看你可能需要等待一个世纪才能等到一个更新(。・・。)（不是）
 
-### Preview
+### Preview 分支
 
 更新较快的分支.
 
@@ -69,7 +69,7 @@ Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器�
 
 在有一个新功能后Backup会打开一个拉取请求，这个拉取请求将把这个新功能变基到Drowne分支，GitHub将每周三检查提交，在发现新提交后将编译一个版本到Release.
 
-### Backup:
+### Backup 分支
 
 讲个笑话，Starcloudsea 曾经用 Git 成功删除了它的整个解决方案......
 
@@ -92,8 +92,10 @@ Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器�
 旨在简化你的Minecraft体验。
 
 ## 应用截图
-> [!NOTE]
-> 等会项目准备好了再传QAQ
+> [!TIP]
+> 只是还没写完的界面，请别乱想QAQ
+
+![MainPage](https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/docs/assets/BadMC_Launcher_MainPage.png)
 
 ## 功能
 - Minecraft
@@ -109,7 +111,7 @@ Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器�
 > 首先，你需要确保你的电脑已安装 .NET 9 的附带 .NET 9 Runtime 的任意版本.
 > [如果没有，在此处下载.](https://dotnet.microsoft.com/zh-cn/download/dotnet/9.0)
 
-> [!TIP]
+> [!NOTE]
 > 我们还没钱买各个商店的开发者账号QAQ
 
 在 Release 下载对应你的系统和架构的应用程序，对于安装包，直接安装即可，对于压缩包，解压后直接运行BadMC_Launcher.exe或主程序的可执行文件。
@@ -165,8 +167,9 @@ Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器�
 > 这将允许MacOS从任何来源安装软件，你可以在设置将其关闭.
 >
 > 如果依然无法安装，请尝试在终端运行这行命令.
+> ```bash
 > sudo xattr -rd com.apple.quarantine \<你的dmg文件的路径，你可以直接将dmg文件拖到这里.\>
->
+> ```
 > 运行这些命令可能会要求你输入管理员密码已验证身份，不过注意，在你输入密码时，终端不会显示你的输入.
 
 ### Linux
@@ -222,9 +225,9 @@ uno-check
 
 **或者即刻加入我们的 QQ 群或 Discord 以获取帮助！q(≧▽≦q)（最快）**
 
-![Discord](https://img.shields.io/discord/1025379148304240690?style=for-the-badge&logo=discord&logoColor=0077FF&label=Discord&labelColor=F3F3F3&color=0077FF&link=https%3A%2F%2Fdiscord.gg%2FjfZPPpC3Av)
-![BadBC Developer](https://img.shields.io/badge/BadBC%20Developer-%E7%94%B3%E8%AF%B7%20BadBC%20Developer%20%E6%88%90%E5%91%98-0077FF?style=for-the-badge&labelColor=F3F3F3&link=https%3A%2F%2Fforms.office.com%2Fr%2Fmp5madSnHi)
-![Starcloudsea 的团伙窝点 (雾)](https://img.shields.io/badge/Starcloudsea%20%E7%9A%84%E5%9B%A2%E4%BC%99%E7%AA%9D%E7%82%B9%20(%E9%9B%BE)-631610017-0077FF?style=for-the-badge&labelColor=F3F3F3&link=https%3A%2F%2Fqm.qq.com%2Fq%2FtLesvcJCa4)
+[![Discord](https://img.shields.io/discord/1025379148304240690?style=for-the-badge&logo=discord&logoColor=0077FF&label=Discord&labelColor=F3F3F3&color=0077FF&link=https%3A%2F%2Fdiscord.gg%2FjfZPPpC3Av)](https://discord.gg/jfZPPpC3Av)
+[![BadBC Developer](https://img.shields.io/badge/BadBC%20Developer-%E7%94%B3%E8%AF%B7%20BadBC%20Developer%20%E6%88%90%E5%91%98-0077FF?style=for-the-badge&labelColor=F3F3F3&link=https%3A%2F%2Fforms.office.com%2Fr%2Fmp5madSnHi)](https://forms.office.com/r/mp5madSnHi)
+[![Starcloudsea 的团伙窝点 (雾)](https://img.shields.io/badge/Starcloudsea%20%E7%9A%84%E5%9B%A2%E4%BC%99%E7%AA%9D%E7%82%B9%20(%E9%9B%BE)-631610017-0077FF?style=for-the-badge&labelColor=F3F3F3&link=https%3A%2F%2Fqm.qq.com%2Fq%2FtLesvcJCa4)](https://qm.qq.com/q/tLesvcJCa4)
 
 ## 主要引用项 & 参考
 
