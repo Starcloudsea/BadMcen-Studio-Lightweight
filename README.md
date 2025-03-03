@@ -1,6 +1,6 @@
 <div align="center">
 
-<img Height="100" Width="100" src="https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/BadMC_Launcher/Assets/Icons/appicon_full.png"/>
+<img Height="160" Width="160" src="https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/BadMC_Launcher/Assets/Icons/appicon_full.png"/>
 
 # BadMC Launcher
 
@@ -53,7 +53,7 @@
 
 更新较快的分支.
 
-Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器和 Drowned.Get~~（我被绑#……@&*！）~~ ）共同努力后发现这玩意也看不出什么 Bug 了之后直接通过 pr（不是那个 Pr！）直接变基到 Preview 分支的更新
+Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器和 Drowned.Get（~~我被绑#……@&*！）~~）共同努力后发现这玩意也看不出什么 Bug 了之后直接通过 pr（不是那个 Pr！）直接变基到 Preview 分支的更新
 
 由于更新较慢，所以在分支有更新时将编译一个新版本并发布到Release。
 
@@ -191,6 +191,8 @@ Snap应用商店:
 ```bash
 sudo snap install BadMC_Launcher
 ```
+
+**不过在我们发布第一个Drowned分支的版本时应该还是别考虑这么一堆下载方式能用了吧......（QAQ）**
 
 <br/>
 </details>
