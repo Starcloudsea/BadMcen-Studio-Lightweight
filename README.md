@@ -1,6 +1,6 @@
 <div align="center">
 
-<img src="https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/BadMC_Launcher/Assets/Icons/appicon_full.png"/>
+<img Height="100" Width="100" src="https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/BadMC_Launcher/Assets/Icons/appicon_full.png"/>
 
 # BadMC Launcher
 
