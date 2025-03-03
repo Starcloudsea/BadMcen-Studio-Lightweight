@@ -1,5 +1,4 @@
 global using System.Diagnostics;
-global using BadMC_Launcher.Constants;
 global using BadMC_Launcher.Servicess;
 global using CommunityToolkit.Mvvm.ComponentModel;
 global using Microsoft.Extensions.DependencyInjection;

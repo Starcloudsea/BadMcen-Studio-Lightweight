@@ -38,7 +38,7 @@ public partial class LaunchPadViewModel : ObservableObject {
                 if (minecraftPathEntry.ActiveMinecraftEntryId != null) {
                     var minecraftItem = minecraftPathEntry.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId);
                     if (minecraftItem != null) {
-                        MinecraftListSelectedItem = MinecraftList.FirstOrDefault(item => item.GetMinecraftName() == minecraftItem.GetMinecraftName());
+                        MinecraftListSelectedItem = MinecraftList.FirstOrDefault(item => item.MinecraftId == minecraftItem.MinecraftId);
                     }
                 }
                 MinecraftPathListSelectedItem = minecraftPathEntry;
@@ -119,7 +119,7 @@ public partial class LaunchPadViewModel : ObservableObject {
         if (parameter is ListView listView) {
             var item = (MinecraftItem)listView.SelectedItem;
             if (item != null && MinecraftService.ActiveMinecraftPath != null && minecraftPathEntry != null) {
-                minecraftPathEntry.ActiveMinecraftEntryId = item.GetMinecraftName();
+                minecraftPathEntry.ActiveMinecraftEntryId = item.MinecraftId;
                 SetLaunchButtonEntry();
             }
         }
@@ -154,14 +154,12 @@ public partial class LaunchPadViewModel : ObservableObject {
     }
 
     public void SetLaunchButtonEntry() {
-        if (MinecraftService.ActiveMinecraftPath != null && minecraftPathEntry != null && minecraftPathEntry.ActiveMinecraftEntryId != null) {
-            if (MinecraftService.ActiveMinecraftPath != null) {
-                var minecraftItem = minecraftPathEntry.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId);
-                if (minecraftItem != null) {
-                    GameEntryName = minecraftItem.GetMinecraftName();
-                    GameEntryImage = minecraftItem.MinecraftImage;
-                    return;
-                }
+        if (minecraftPathEntry != null && minecraftPathEntry.ActiveMinecraftEntryId != null) {
+            var minecraftItem = minecraftPathEntry.GetMinecraftItem(minecraftPathEntry.ActiveMinecraftEntryId);
+            if (minecraftItem != null) {
+                GameEntryName = minecraftItem.MinecraftId;
+                GameEntryImage = minecraftItem.MinecraftImage;
+                return;
             }
         }
         GameEntryName = App.GetService<ResourceLoader>().GetString("LaunchPad_LaunchButtonTagDefaultResource");

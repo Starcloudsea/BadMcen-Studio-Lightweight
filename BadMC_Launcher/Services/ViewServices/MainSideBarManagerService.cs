@@ -12,7 +12,7 @@ using BadMC_Launcher.Views.Pages.MainSideBarPages;
 using CommunityToolkit.Mvvm.Messaging.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using Newtonsoft.Json.Linq;
-using BadMC_Launcher.Constants.Enums;
+using BadMC_Launcher.Enums;
 
 namespace BadMC_Launcher.Services.ViewServices;
 public class MainSideBarManagerService {

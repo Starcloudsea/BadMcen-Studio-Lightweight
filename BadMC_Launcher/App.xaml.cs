@@ -1,5 +1,7 @@
 using BadMC_Launcher.Classes;
 using BadMC_Launcher.Classes.MainSearch;
+using BadMC_Launcher.Models.Datas;
+using BadMC_Launcher.Services;
 using BadMC_Launcher.Services.ViewServices;
 using BadMC_Launcher.Servicess;
 using BadMC_Launcher.Servicess.Settings;
@@ -87,6 +89,7 @@ public partial class App : Application {
                     services.AddSingleton<ThemeSettingService>();
                     services.AddSingleton<MainSideBarManagerService>();
                     services.AddSingleton<MainMenuService>();
+                    services.AddSingleton<AppAssetsService>();
                     services.AddTransient<SingleMinecraftConfigService>();
                 })
             );

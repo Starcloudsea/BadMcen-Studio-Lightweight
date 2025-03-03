@@ -3,7 +3,7 @@
         <StackPanel Height="20" ToolTipService.ToolTip="{Binding MinecraftPath}">
             <TextBlock VerticalAlignment="Center"
                        Style="{ThemeResource BodyStrongTextBlockStyle}"
-                       Text="{Binding MinecraftName}" />
+                       Text="{Binding MinecraftId}" />
         </StackPanel>
     </DataTemplate>
 </ResourceDictionary>

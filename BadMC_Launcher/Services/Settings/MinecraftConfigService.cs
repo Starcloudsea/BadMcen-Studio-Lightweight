@@ -22,6 +22,7 @@ using System.ComponentModel;
 using BadMC_Launcher.Models.Datas.SettingsDatas;
 using BadMC_Launcher.Extensions;
 using BadMC_Launcher.Classes.Minecraft;
+using BadMC_Launcher.Models.Datas;
 
 namespace BadMC_Launcher.Servicess.Settings;
 public class MinecraftConfigService : IConfigClass {

@@ -32,7 +32,7 @@
                        Height="30"
                        Margin="6,6,0,0"
                        Style="{ThemeResource SubtitleTextBlockStyle}"
-                       Text="{Binding MinecraftName}"
+                       Text="{Binding MinecraftId}"
                        TextTrimming="CharacterEllipsis" />
             <controls:MetadataControl Grid.Row="1"
                                       Grid.Column="1"

@@ -25,7 +25,7 @@ public class MainMenuSearchMinecraftEntryFilter : IMainMenuSharchFilterItem {
                 var viewItem = pathEntry.GetMinecraftItem(minecraftEntry);
                 if (viewItem != null) {
                     returnList.Add(new MainMenuSearchResultItem() {
-                        ItemTitle = viewItem.GetMinecraftName(),
+                        ItemTitle = viewItem.MinecraftId,
                         ItemSubTitle = viewItem.MinecraftEntry.MinecraftFolderPath,
                         ItemIcon = new Image() {
                             Source = viewItem.MinecraftImage,
@@ -41,7 +41,7 @@ public class MainMenuSearchMinecraftEntryFilter : IMainMenuSharchFilterItem {
 
     public Action NavigateTo(MinecraftItem minecraftItem) {
         return () => {
-            Debug.WriteLine($"诶诶还妹写呢Σ(っ °Д °;)っ {minecraftItem.GetMinecraftName()}");
+            Debug.WriteLine($"诶诶还妹写呢Σ(っ °Д °;)っ {minecraftItem.MinecraftId}");
         };
         //throw new NotImplementedException("诶诶还妹写呢Σ(っ °Д °;)っ");
         //TODO: 弹出特定的版本页面

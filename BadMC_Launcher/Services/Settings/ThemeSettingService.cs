@@ -10,7 +10,8 @@ using CommunityToolkit.Mvvm.Messaging.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Xaml.Media.Imaging;
 using BadMC_Launcher.Models.Datas.SettingsDatas;
-using BadMC_Launcher.Constants.Enums;
+using BadMC_Launcher.Models.Datas;
+using BadMC_Launcher.Enums;
 
 namespace BadMC_Launcher.Servicess.Settings;
 public class ThemeSettingService : IConfigClass {

@@ -3,7 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BadMC_Launcher.Constants.Enums;
+using BadMC_Launcher.Enums;
 
 namespace BadMC_Launcher.Models.Datas.SettingsDatas;
 internal static class ThemeSetting {

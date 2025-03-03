@@ -180,7 +180,6 @@
                                                    HorizontalAlignment="Center"
                                                    Style="{ThemeResource BodyStrongTextBlockStyle}" />
                                         <TextBlock x:Uid="LaunchPad_MinecraftEmptyListTipsHyperLinkButtonResource" HorizontalAlignment="Center" />
-
                                     </StackPanel>
                                     <!-- Minecraft List -->
                                     <ListView x:Name="MinecraftList"

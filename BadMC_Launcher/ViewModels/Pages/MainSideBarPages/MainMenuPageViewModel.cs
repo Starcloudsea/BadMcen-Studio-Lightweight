@@ -7,7 +7,7 @@ using System.Text;
 using System.Threading.Tasks;
 using BadMC_Launcher.Classes;
 using BadMC_Launcher.Classes.MainSearch;
-using BadMC_Launcher.Constants.Enums;
+using BadMC_Launcher.Enums;
 using BadMC_Launcher.Extensions;
 using BadMC_Launcher.Interfaces;
 using BadMC_Launcher.Models.Datas.ViewDatas;

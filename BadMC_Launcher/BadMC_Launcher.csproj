@@ -1,8 +1,6 @@
 <Project Sdk="Uno.Sdk">
     <PropertyGroup>
-        <TargetFrameworks>net9.0-desktop;net9.0</TargetFrameworks>
-        <TargetFrameworks Condition=" $([MSBuild]::IsOSPlatform('windows')) ">$(TargetFrameworks);net9.0-windows10.0.26100</TargetFrameworks>
-        <TargetFrameworks Condition=" !$([MSBuild]::IsOSPlatform('linux')) ">$(TargetFrameworks);net9.0-ios;net9.0-maccatalyst</TargetFrameworks>
+        <TargetFrameworks>net9.0-maccatalyst;net9.0-windows10.0.26100;net9.0-desktop;net9.0</TargetFrameworks>
         <LangVersion>preview</LangVersion>
         
         <OutputType>Exe</OutputType>
@@ -58,6 +56,7 @@
             Mvvm;
             ThemeService;
         </UnoFeatures>
+        <Platforms>AnyCPU;ARM64;x64;x86</Platforms>
     </PropertyGroup>
     <ItemGroup>
       <None Remove="Assets\Icons\appicon_foreground.png" />
@@ -69,8 +68,10 @@
           <PackageReference Include="CommunityToolkit.Labs.WinUI.TokenView" />
           <PackageReference Include="CommunityToolkit.WinUI.Behaviors" />
           <PackageReference Include="CommunityToolkit.WinUI.Controls.MetadataControl" />
+          <PackageReference Include="CommunityToolkit.WinUI.Controls.Primitives" />
           <PackageReference Include="CommunityToolkit.WinUI.Controls.TokenizingTextBox" />
           <PackageReference Include="CommunityToolkit.WinUI.Converters" />
+          <PackageReference Include="CommunityToolkit.WinUI.Extensions" />
           <PackageReference Include="CommunityToolkit.WinUI.Triggers" />
           <PackageReference Include="Microsoft.CodeAnalysis.CSharp.Scripting" />
           <PackageReference Include="MinecraftLaunch" />

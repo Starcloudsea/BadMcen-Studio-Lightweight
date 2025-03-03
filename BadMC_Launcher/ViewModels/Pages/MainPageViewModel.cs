@@ -9,8 +9,8 @@ using CommunityToolkit.Mvvm.Messaging.Messages;
 using CommunityToolkit.Mvvm.Messaging;
 using Microsoft.UI.Xaml.Controls.Primitives;
 using Microsoft.UI.Xaml.Media.Animation;
-using BadMC_Launcher.Constants.Enums;
 using Uno.UI.RemoteControl;
+using BadMC_Launcher.Enums;
 
 namespace BadMC_Launcher.ViewModels.Pages;
 

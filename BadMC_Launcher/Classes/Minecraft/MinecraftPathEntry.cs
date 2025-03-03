@@ -21,7 +21,7 @@ public class MinecraftPathEntry {
 
     public MinecraftPathEntry() {
     }
-    public required string MinecraftName {
+    public required string MinecraftId {
         get => minecraftName;
         set {
             minecraftName = value;

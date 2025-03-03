@@ -5,15 +5,16 @@ using System.Collections.ObjectModel;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using BadMC_Launcher.Constants.Enums;
+using BadMC_Launcher.Enums;
 using CommunityToolkit.WinUI.Controls;
+using Microsoft.UI.Xaml.Media.Imaging;
 using MinecraftLaunch.Base.Enums;
 using MinecraftLaunch.Base.Models.Game;
 using Uno.Extensions.Specialized;
 
 namespace BadMC_Launcher.Extensions;
 public static class MinecraftEntryExtension {
-    public static MinecraftEntryImageEnum GetMinecraftImage(this MinecraftEntry minecraftEntry) {
+    public static MinecraftEntryImageEnum GetMinecraftImageEnum(this MinecraftEntry minecraftEntry) {
         if (File.Exists(Path.Combine(minecraftEntry.MinecraftFolderPath, @"BadBCConfigs\icon.png"))) {
             return MinecraftEntryImageEnum.Custom;
         }
@@ -59,8 +60,10 @@ public static class MinecraftEntryExtension {
                 return minecraftEntryImage;
             }
         }
+        //TODO: 正式版别忘了改.png
         throw new NotImplementedException("欸等一下Σ(っ °Д °;)っ我们还没支持这个类型呢你怎么就给（*#……*！&@%！*……@");
     }
+
     public static IEnumerable<MetadataItem> GetMinecraftEntryTags(this MinecraftEntry minecraftEntry) {
         var tags = new HashSet<MetadataItem>() { new MetadataItem() { Label = $"{minecraftEntry.Version.Type} {minecraftEntry.Version.VersionId}" } };
         if (minecraftEntry is ModifiedMinecraftEntry modifiedEntry) {

@@ -5,7 +5,8 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using BadMC_Launcher.Classes.Minecraft;
-using BadMC_Launcher.Constants.Enums;
+using BadMC_Launcher.Enums;
+using BadMC_Launcher.Services;
 using CommunityToolkit.WinUI.Controls;
 using Microsoft.UI.Xaml.Media.Imaging;
 using MinecraftLaunch.Base.Models.Game;
@@ -27,24 +28,32 @@ public static class MinecraftPathEntryExtension {
         try {
             if (minecraftEntry != null) {
                 var isStarred = false;
-                string path;
-
-                var minecraftEntryImageEnum = minecraftEntry.GetMinecraftImage();
+                var minecraftEntryImageEnum = minecraftEntry.GetMinecraftImageEnum();
+                BitmapImage? image = null;
                 if (minecraftEntryImageEnum == MinecraftEntryImageEnum.Custom) {
-                    path = Path.Combine(minecraftEntry.MinecraftFolderPath, @"BadBCConfigs\icon.png");
-                    if (!File.Exists(path)) {
-                        throw new FileNotFoundException($"\"{path}\" is not found.");
+                    var path = Path.Combine(minecraftEntry.MinecraftFolderPath, @"BadBCConfigs\icon.png");
+                    if (File.Exists(path)) {
+                        image = new(new Uri(path));
                     }
                 }
                 else {
-                    path = @$"ms-appx:///Assets/Icons/MinecraftIcons/{minecraftEntryImageEnum.ToString().ToLower()}.png";
+                    if (App.GetService<AppAssetsService>().MinecraftImageInstance[minecraftEntryImageEnum].Value.TryGetTarget(out BitmapImage? instance)) {
+                        image = instance;
+                    }
                 }
+
+                if (image == null) {
+                    //TODO: Dialog Ex
+                    image = new(new Uri($@"ms-appx:///Assets/Icons/MinecraftIcons/{MinecraftEntryImageEnum.Unknown.ToString().ToLower()}.png"));
+                }
+
                 if (minecraftPath.StarredMinecraftIds != null) {
                     isStarred = minecraftPath.StarredMinecraftIds.IndexOf(minecraftEntry.Id) >= 0;
                 }
+
                 return new MinecraftItem() {
                     MinecraftEntry = minecraftEntry,
-                    MinecraftImage = new BitmapImage() { UriSource = new Uri(path) },
+                    MinecraftImage = image,
                     MinecraftTags = (HashSet<MetadataItem>)minecraftEntry.GetMinecraftEntryTags(),
                     IsStarred = isStarred
                 };
@@ -65,7 +74,7 @@ public static class MinecraftPathEntryExtension {
             string path;
 
             //Get Minecraft Icon
-            var minecraftEntryImageEnum = entry.GetMinecraftImage();
+            var minecraftEntryImageEnum = entry.GetMinecraftImageEnum();
             if (minecraftEntryImageEnum == MinecraftEntryImageEnum.Custom) {
                 path = Path.Combine(entry.MinecraftFolderPath, @"BadBCConfigs\icon.png");
                 if (!File.Exists(path)) {
