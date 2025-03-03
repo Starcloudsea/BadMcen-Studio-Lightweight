@@ -1,5 +1,5 @@
 <div align="center">
-  
+
 <img src="https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/BadMC_Launcher/Assets/Icons/appicon_full.png"/>
 
 # BadMC Launcher
@@ -8,7 +8,7 @@
 
 **[Starcloudsea](https://github.com/Starcloudsea) 的作品(要累死我QAQ)**
 
-**特别鸣谢: 
+**特别鸣谢:
 [Drowned.Get](https://github.com/DrownedGet) |
 [YangSpring 429](https://github.com/YangSpring429) |
 [Gen123](https://github.com/geenh) |
@@ -39,9 +39,49 @@
 <br/>
 </details>
 
-> [!TIP]
-> Release分支意味着这个分支的内容用于正式版本，它接收的更新最稳定，也最晚收到更新。
-> 但是根据Starcloudsea的更新速度来看你可能需要等待一个世纪才能等到一个更新(。・ω・。)（不是）
+<details>
+<summary> 各个分支的解释 </summary>
+<br/>
+
+### Release 分支
+
+这个分支的内容用于正式版本，它接收的更新最稳定，也最晚收到更新。
+
+但是根据Starcloudsea的更新速度来看你可能需要等待一个世纪才能等到一个更新(。・・。)（不是）
+
+### Preview
+
+更新较快的分支.
+
+Drowned 分支的测试员（指每个更新分支在Drowned分支的启动器和 Drowned.Get~~（我被绑#……@&*！）~~ ）共同努力后发现这玩意也看不出什么 Bug 了之后直接通过 pr（不是那个 Pr！）直接变基到 Preview 分支的更新
+
+由于更新较慢，所以在分支有更新时将编译一个新版本并发布到Release。
+
+这个分支较为稳定，所以如果你想体验一下新功能，你可以试试这个（
+
+### Drowned 分支
+
+更新最快的分支.
+
+为啥啥更新这么快？
+
+因为溺尸不睡觉于是Starcloudsea就把Drowned.Get绑架过来当免费劳动力了（Drowned.et: w@！#@&（*/#……*&......）
+
+在有一个新功能后Backup会打开一个拉取请求，这个拉取请求将把这个新功能变基到Drowne分支，GitHub将每周三检查提交，在发现新提交后将编译一个版本到Release.
+
+### Backup:
+
+讲个笑话，Starcloudsea 曾经用 Git 成功删除了它的整个解决方案......
+
+所以这是它长的记性o(TヘTo) Backup分支的内容不会在Release出现，因为这个分支是为防止解决方案丢失而做的备份，可能能用，可能不能用（
+
+没错，这个才是最最最新的分支！
+
+但是你千万别把它在正式环境用啊Σ(っ °Д °;)っ 不过你可以在这个分支的提交记录中看见一堆 Starcloudsea 发癫发的东西（
+
+<br/>
+</details>
+<br/>
 
 > [!CAUTION]
 > 不要明确向主要贡献者询问关于这个项目的问题，因为他们不希望参与这个项目太多.
@@ -89,11 +129,11 @@
 ### Windows
 
 > 适用范围
-> 
+>
 > WinUI: Windows 10/11+
-> 
+>
 > Desktop: Windows 8/10/11+
-> 
+>
 > Arm64, x64, x86
 
 安装包: `BadMC_Launcher.\<你的系统架构\>-WinUIPackaged.msix` `BadMC_Launcher.\<你的系统架构\>-DesktopWindows.exe`
@@ -105,9 +145,9 @@
 ### macOS
 
 > 适用范围
-> 
+>
 > 所有支持 .NET 9 和 Mac Catalyst 的 macOS（macOS 10.15+）
-> 
+>
 > Arm64, x64, x86
 
 安装包: `BadMC_Launcher.\<你的系统架构\>-DesktopMacOS.dmg` `BadMC_Launcher.\<你的系统架构\>-MacCatalyst.pkg`
@@ -123,7 +163,7 @@
 > ```
 > 然后打开`系统偏好设置 \> 隐私与安全性 \> 安全性`，点击`任何来源`.
 > 这将允许MacOS从任何来源安装软件，你可以在设置将其关闭.
-> 
+>
 > 如果依然无法安装，请尝试在终端运行这行命令.
 > sudo xattr -rd com.apple.quarantine \<你的dmg文件的路径，你可以直接将dmg文件拖到这里.\>
 >
@@ -132,9 +172,9 @@
 ### Linux
 
 > 适用范围
-> 
+>
 > 所有支持 .NET 9 的 Linux
-> 
+>
 > Arm64, x64, x86
 
 安装包: `BadMC_Launcher.\<你的系统架构\>-DesktopLinux.snap`
@@ -143,7 +183,7 @@
 sudo snap install BadMC_Launcher.\<你的系统架构\>-DesktopLinux.snap --dangerous --classic
 ```
 
-Snap应用商店: 
+Snap应用商店:
 直接在命令行输入这段命令以安装BadMC Launcher.
 ```bash
 sudo snap install BadMC_Launcher
@@ -175,7 +215,7 @@ uno-check
 > 1. 请在继续时使用 Bing 搜索你的问题
 > 2. **我们不对 `怎么解压`, `手机能用吗`, `怎么下载`, `桌面在哪`, `下载下来运行不了它说没有关联的程序打开zip文件`, `为什么我的 Windows 7 没法运行`, `我的 Windows 8.1 没法运行WinUIPackaged怎么回事`, `说好的免费为啥解压要钱啊`, `我电脑不是 i9 级吗怎么玩 MC 这么卡啊`, `这是怎么回事（附上一个缺少 .NET 运行时的截图）`, `装 .NET 9 怎么要 48 块钱啊`, `什么是微软账号`, `我要玩我的世界为什么上面显示"启动 Minecraft!"啊我不玩 Minecraft 啊`, `Java 是什么`, `JDK 是什么`, `这压缩包我看不懂啊（把源码下载下来了）`, `Forge 是什么`, `我Mod装上去崩了咋办啊（Mod问题问我们干嘛？？？(＃°Д°)）`, `它说要管理员权限，我得找我爸妈要吗`, `显卡和CPU是什么`, `为什么打不开啊（没附报错截图）`之类的问题进行解答，你是嫌我们的血压还不够高是吧(╬▔皿▔)╯**
 > 4. 搜索有没有人提过类似的问题
-> 
+>
 > **再乱搞你可要赔偿我们一顿 KFC 疯狂星期四降压套餐（恼😡）**
 
 你可以在 Issues 或者 Discussions 的 Q&A 板块提出问题，如果你的问题符合规则，我们会帮助你 awa
