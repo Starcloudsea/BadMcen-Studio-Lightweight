@@ -281,4 +281,4 @@ Collection of controls for WinUI 2, WinUI 3, and Uno Platform developers. Simpli
 [MPL-2.0 license](https://github.com/BadBC-Studio/BadMC_Launcher/blob/Release/LICENSE)，在二次分发时请务必遵守该协议.
 
 Starcloudsea 的作品.
-Copyright (c) 2019-2025 XadBC.
+Copyright (c) 2019-2025 BadBC.
